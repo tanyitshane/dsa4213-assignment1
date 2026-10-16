@@ -105,7 +105,7 @@ All settings live in `config.py`; the values reported are the defaults there.
 
 ## Reproducibility notes
 
-- Results in the report were produced on: **[fill in: GPU, CPU, RAM, OS, PyTorch version]**. Each run JSON also records this.
+- Results in the report were produced on: - Results in the report were produced on: **NVIDIA GeForce RTX 5070 Ti (16 GB), AMD CPU (16 threads), [RAM] GB RAM, Windows 11, Python 3.12.10, PyTorch 2.11.0 (CUDA 12.8)**. Each run JSON also records this.
 - TF32 matrix multiplication is enabled on CUDA for speed. Together with non-deterministic cuDNN kernels, this means a rerun can differ in the later decimal places.
 - Timings depend on hardware. Neural timings are on the GPU; the n-gram runs on the CPU (stated in the tables).
 
