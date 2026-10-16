@@ -1,0 +1,6 @@
+# Install PyTorch separately first (see README) — the right build depends on the machine.
+numpy>=1.26
+gensim>=4.3.3
+scikit-learn>=1.4
+matplotlib>=3.8
+datasets>=2.19

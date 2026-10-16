@@ -1,0 +1,493 @@
+{
+  "name": "lstm_glove",
+  "arch": "lstm",
+  "embedding": "glove",
+  "embedding_trainable": false,
+  "embedding_changed_during_training": false,
+  "params": {
+    "total": 11214869,
+    "trainable": 8323569,
+    "embedding": 2891300,
+    "output_layer": 7430641,
+    "core": 892928,
+    "size_mb_fp32": 44.86
+  },
+  "config": {
+    "SEQ_LEN": 128,
+    "BATCH_SIZE": 64,
+    "EMB_DIM": 100,
+    "HIDDEN": 256,
+    "DROPOUT": 0.3,
+    "LR": 0.001,
+    "WEIGHT_DECAY": 0.01,
+    "WARMUP_STEPS": 300,
+    "GRAD_CLIP": 1.0,
+    "SEED": 7,
+    "epochs": 20
+  },
+  "best_epoch": 20,
+  "valid_ce": 5.338823068718627,
+  "valid_ppl": 208.26744951364313,
+  "test_ce": 5.26427326060729,
+  "test_ppl": 193.30577480642677,
+  "test_targets": 244101,
+  "train_seconds": 179.11,
+  "seconds_per_epoch": 8.96,
+  "inference": {
+    "workload": "score all test targets once (batch 64, window 128)",
+    "seconds_median": 0.4312,
+    "seconds_all": [
+      0.4312,
+      0.4265,
+      0.4369
+    ],
+    "tokens": 244101,
+    "tokens_per_second": 566159.6
+  },
+  "generation_seconds": 0.386,
+  "history": [
+    {
+      "epoch": 1,
+      "train_ce": 7.775554756233329,
+      "valid_ce": 6.755946511173074,
+      "train_ppl": 2381.664176724711,
+      "valid_ppl": 859.1525626595339,
+      "epoch_seconds": 8.85,
+      "lr_end": 0.00085,
+      "grad_norm_mean": 0.42164669062678267,
+      "grad_norm_max": 1.48395836353302,
+      "step_loss_std": 0.04056815087858912,
+      "clipped_frac": 0.1220472440944882
+    },
+    {
+      "epoch": 2,
+      "train_ce": 6.965265631351117,
+      "valid_ce": 6.555565199235253,
+      "train_ppl": 1059.1962357882294,
+      "valid_ppl": 703.1464553728265,
+      "epoch_seconds": 8.89,
+      "lr_end": 0.0009958016689451123,
+      "grad_norm_mean": 0.2399962960383085,
+      "grad_norm_max": 0.3600604236125946,
+      "step_loss_std": 0.054092217416850885,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 3,
+      "train_ce": 6.676071686061292,
+      "valid_ce": 6.229922406555934,
+      "train_ppl": 793.1970567699548,
+      "valid_ppl": 507.71608652757885,
+      "epoch_seconds": 8.86,
+      "lr_end": 0.0009794140436399368,
+      "grad_norm_mean": 0.21833494469875425,
+      "grad_norm_max": 0.37161925435066223,
+      "step_loss_std": 0.05914218998563082,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 4,
+      "train_ce": 6.412939820179499,
+      "valid_ce": 6.028480185530354,
+      "train_ppl": 609.6834086216642,
+      "valid_ppl": 415.08369953871966,
+      "epoch_seconds": 8.88,
+      "lr_end": 0.0009510871199777161,
+      "grad_norm_mean": 0.18988277241000978,
+      "grad_norm_max": 0.27371644973754883,
+      "step_loss_std": 0.05049061620189227,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 5,
+      "train_ce": 6.23965181878957,
+      "valid_ce": 5.8780086174172395,
+      "train_ppl": 512.6799743290602,
+      "valid_ppl": 357.09741561124423,
+      "epoch_seconds": 8.91,
+      "lr_end": 0.0009116084911872929,
+      "grad_norm_mean": 0.18496688854271973,
+      "grad_norm_max": 0.2584909200668335,
+      "step_loss_std": 0.050484708607876384,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 6,
+      "train_ce": 6.10053547944979,
+      "valid_ce": 5.765992611372524,
+      "train_ppl": 446.0965816895729,
+      "valid_ppl": 319.2557837322054,
+      "epoch_seconds": 8.89,
+      "lr_end": 0.0008620758091383179,
+      "grad_norm_mean": 0.18468995791251266,
+      "grad_norm_max": 0.3452467620372772,
+      "step_loss_std": 0.04506192471360119,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 7,
+      "train_ce": 5.982827933938014,
+      "valid_ce": 5.67358872621865,
+      "train_ppl": 396.5602300943687,
+      "valid_ppl": 291.0772588367978,
+      "epoch_seconds": 8.86,
+      "lr_end": 0.0008038662655602338,
+      "grad_norm_mean": 0.19883613851596052,
+      "grad_norm_max": 0.4192834198474884,
+      "step_loss_std": 0.047651605735750176,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 8,
+      "train_ce": 5.88404983167766,
+      "valid_ce": 5.60258412017093,
+      "train_ppl": 359.26124711468464,
+      "valid_ppl": 271.1261254486886,
+      "epoch_seconds": 8.82,
+      "lr_end": 0.0007385983010194346,
+      "grad_norm_mean": 0.19266081413650138,
+      "grad_norm_max": 0.3319642245769501,
+      "step_loss_std": 0.04643021386354549,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 9,
+      "train_ce": 5.805933581977072,
+      "valid_ce": 5.544980952819789,
+      "train_ppl": 332.26524543625123,
+      "valid_ppl": 255.9497030767228,
+      "epoch_seconds": 8.83,
+      "lr_end": 0.0006680866062866371,
+      "grad_norm_mean": 0.19842613699633305,
+      "grad_norm_max": 0.35442349314689636,
+      "step_loss_std": 0.0496543610286024,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 10,
+      "train_ce": 5.7433524817645445,
+      "valid_ce": 5.503173004339692,
+      "train_ppl": 312.1089987491733,
+      "valid_ppl": 245.46957390489416,
+      "epoch_seconds": 8.82,
+      "lr_end": 0.0005942916672228525,
+      "grad_norm_mean": 0.20461719090075003,
+      "grad_norm_max": 0.4082713723182678,
+      "step_loss_std": 0.0447297318652262,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 11,
+      "train_ce": 5.69132217985225,
+      "valid_ce": 5.4666484762833605,
+      "train_ppl": 296.28510397276,
+      "valid_ppl": 236.6656714655716,
+      "epoch_seconds": 8.83,
+      "lr_end": 0.0005192652560227072,
+      "grad_norm_mean": 0.1964161450585981,
+      "grad_norm_max": 0.2993130087852478,
+      "step_loss_std": 0.05054568829656946,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 12,
+      "train_ce": 5.646903435130529,
+      "valid_ce": 5.43669455012168,
+      "train_ppl": 283.4125004471592,
+      "valid_ppl": 229.68172589294602,
+      "epoch_seconds": 8.85,
+      "lr_end": 0.00044509338436011836,
+      "grad_norm_mean": 0.1976842595718977,
+      "grad_norm_max": 0.3048824965953827,
+      "step_loss_std": 0.04825858834792415,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 13,
+      "train_ce": 5.611168530705648,
+      "valid_ce": 5.411129923609057,
+      "train_ppl": 273.4636019909081,
+      "valid_ppl": 223.88441710326447,
+      "epoch_seconds": 8.87,
+      "lr_end": 0.00037383830454983005,
+      "grad_norm_mean": 0.1969520974112308,
+      "grad_norm_max": 0.28631487488746643,
+      "step_loss_std": 0.05269732901124444,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 14,
+      "train_ce": 5.580872253062397,
+      "valid_ce": 5.389676378492092,
+      "train_ppl": 265.3029161720591,
+      "valid_ppl": 219.13245810122655,
+      "epoch_seconds": 8.92,
+      "lr_end": 0.0003074811713069947,
+      "grad_norm_mean": 0.19737746437468867,
+      "grad_norm_max": 0.3181684613227844,
+      "step_loss_std": 0.051529104655687594,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 15,
+      "train_ce": 5.556223580115905,
+      "valid_ce": 5.375690715768953,
+      "train_ppl": 258.84348657934504,
+      "valid_ppl": 216.0890769086171,
+      "epoch_seconds": 8.79,
+      "lr_end": 0.0002478669583199181,
+      "grad_norm_mean": 0.20130117272767495,
+      "grad_norm_max": 0.4926714599132538,
+      "step_loss_std": 0.044627129055800414,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 16,
+      "train_ce": 5.536639675155458,
+      "valid_ce": 5.366471723102114,
+      "train_ppl": 253.82363492474184,
+      "valid_ppl": 214.10610782625682,
+      "epoch_seconds": 8.85,
+      "lr_end": 0.0001966531611589353,
+      "grad_norm_mean": 0.19003557889010964,
+      "grad_norm_max": 0.2778817415237427,
+      "step_loss_std": 0.049085407560421054,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 17,
+      "train_ce": 5.520112301497393,
+      "valid_ce": 5.356941280908244,
+      "train_ppl": 249.6630731523829,
+      "valid_ppl": 212.07527468278147,
+      "epoch_seconds": 8.9,
+      "lr_end": 0.00015526371277025197,
+      "grad_norm_mean": 0.19179357083763662,
+      "grad_norm_max": 0.449980229139328,
+      "step_loss_std": 0.0497747200326369,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 18,
+      "train_ce": 5.508407684244896,
+      "valid_ce": 5.350118569112094,
+      "train_ppl": 246.7578975899338,
+      "valid_ppl": 210.63327098604307,
+      "epoch_seconds": 9.56,
+      "lr_end": 0.00012484939287443146,
+      "grad_norm_mean": 0.19324119037061227,
+      "grad_norm_max": 0.3363327085971832,
+      "step_loss_std": 0.0461259974959536,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 19,
+      "train_ce": 5.499040088810256,
+      "valid_ce": 5.344185066976047,
+      "train_ppl": 244.4571624375187,
+      "valid_ppl": 209.38717852473735,
+      "epoch_seconds": 9.97,
+      "lr_end": 0.00010625583203465884,
+      "grad_norm_mean": 0.19174373695465524,
+      "grad_norm_max": 0.26998817920684814,
+      "step_loss_std": 0.04824140366259866,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 20,
+      "train_ce": 5.490284325603414,
+      "valid_ce": 5.338823068718627,
+      "train_ppl": 242.32609657756691,
+      "valid_ppl": 208.26744951364313,
+      "epoch_seconds": 8.98,
+      "lr_end": 0.0001,
+      "grad_norm_mean": 0.1889260996162422,
+      "grad_norm_max": 0.31646618247032166,
+      "step_loss_std": 0.04745371746410216,
+      "clipped_frac": 0.0
+    }
+  ],
+  "samples": [
+    {
+      "prompt": "the city is located in",
+      "continuation": "the late day . the first year in the uk . the main of the end of the area was the first of the end of a single storm as the largest population and the main depression of the north"
+    },
+    {
+      "prompt": "in 1995 , the band released",
+      "continuation": "on november 17 by the title as a single @-@ number . he also released on march 2004 , on the episode , the song of the game in the album , carey was nominated in the end . <eos>"
+    },
+    {
+      "prompt": "the game received",
+      "continuation": "the team for the game was the first team for the year . despite the first of the following later , but it was also a first single of the match of the united states and federer as one new"
+    },
+    {
+      "prompt": "he was born in",
+      "continuation": "the united states . <eos> = = = other = = = <eos> the first time of the city were one \" the team , one of the player of the first season in the club . <eos> for the"
+    },
+    {
+      "prompt": "during the war , the",
+      "continuation": "church was sent the north of the area of the missouri river and south and then not be replaced and the ship of the north of the eastern army . the united of the government @-@ class of the city"
+    }
+  ],
+  "greedy": [
+    {
+      "prompt": "the city is located in",
+      "continuation": "the united states . the first of the first of the first century of the united states , the first of the first century of the united states , the first of the first century century , the first of"
+    },
+    {
+      "prompt": "in 1995 , the band released",
+      "continuation": "in the united states , and the song was released by the album of the album . <eos> = = = = = = = = = = = = = = = = = = = = = ="
+    },
+    {
+      "prompt": "the game received",
+      "continuation": "the first season . <eos> = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ="
+    },
+    {
+      "prompt": "he was born in",
+      "continuation": "the united states . <eos> = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ="
+    },
+    {
+      "prompt": "during the war , the",
+      "continuation": "first of the first time of the war of the war of the war of the war of the war of the war of the war of the war of the war of the war of the war of the"
+    }
+  ],
+  "sample_repetition": {
+    "distinct_1": 0.61,
+    "distinct_2": 0.856,
+    "repeated_trigram_rate": 0.032
+  },
+  "greedy_repetition": {
+    "distinct_1": 0.2,
+    "distinct_2": 0.256,
+    "repeated_trigram_rate": 0.705
+  },
+  "embedding_coverage": {
+    "source": "glove",
+    "type_coverage": 0.9618,
+    "token_coverage": 0.9474,
+    "missing_types": 1103,
+    "most_frequent_missing": [
+      [
+        "<unk>",
+        54625
+      ],
+      [
+        "<eos>",
+        23767
+      ],
+      [
+        "@-@",
+        16906
+      ],
+      [
+        "@.@",
+        3194
+      ],
+      [
+        "@,@",
+        2699
+      ],
+      [
+        "'t",
+        592
+      ],
+      [
+        "°",
+        258
+      ],
+      [
+        "−",
+        82
+      ],
+      [
+        "'brien",
+        76
+      ],
+      [
+        "×",
+        75
+      ],
+      [
+        "'malley",
+        54
+      ],
+      [
+        "magadheera",
+        53
+      ],
+      [
+        "sorraia",
+        48
+      ],
+      [
+        "degrom",
+        47
+      ],
+      [
+        "₹",
+        45
+      ],
+      [
+        "isesi",
+        44
+      ],
+      [
+        "toniná",
+        44
+      ],
+      [
+        "coldrum",
+        40
+      ],
+      [
+        "mkhedruli",
+        36
+      ],
+      [
+        "vandernoot",
+        36
+      ],
+      [
+        "﻿",
+        36
+      ],
+      [
+        "berhtwald",
+        35
+      ],
+      [
+        "qedar",
+        35
+      ],
+      [
+        "qedarites",
+        35
+      ],
+      [
+        "→",
+        34
+      ]
+    ],
+    "missing_init": "N(0, 0.4082^2), seed 7; <pad> = 0; whole table frozen",
+    "source_vector_std": 0.4082
+  },
+  "hardware": {
+    "device": "cuda",
+    "torch": "2.11.0+cu128",
+    "python": "3.12.10",
+    "os": "Windows 11",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "cpu_count": 16,
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpu_mem_gb": 17.1
+  },
+  "corpus": {
+    "vocab_size": 28913,
+    "train_tokens": 2075677,
+    "train_unk_rate": 0.02631671498022091,
+    "valid_tokens": 216347,
+    "valid_unk_rate": 0.05416298816253519,
+    "test_tokens": 244102,
+    "test_unk_rate": 0.062342791128298825
+  }
+}

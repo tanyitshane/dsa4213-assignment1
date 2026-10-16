@@ -1,0 +1,384 @@
+{
+  "name": "rnn",
+  "arch": "rnn",
+  "embedding": "random",
+  "embedding_trainable": true,
+  "embedding_changed_during_training": true,
+  "params": {
+    "total": 10545173,
+    "trainable": 10545173,
+    "embedding": 2891300,
+    "output_layer": 7430641,
+    "core": 223232,
+    "size_mb_fp32": 42.18
+  },
+  "config": {
+    "SEQ_LEN": 128,
+    "BATCH_SIZE": 64,
+    "EMB_DIM": 100,
+    "HIDDEN": 256,
+    "DROPOUT": 0.3,
+    "LR": 0.001,
+    "WEIGHT_DECAY": 0.01,
+    "WARMUP_STEPS": 300,
+    "GRAD_CLIP": 1.0,
+    "SEED": 7,
+    "epochs": 20
+  },
+  "best_epoch": 20,
+  "valid_ce": 5.289319981433098,
+  "valid_ppl": 198.20859404659075,
+  "test_ce": 5.212676902311953,
+  "test_ppl": 183.58483969539972,
+  "test_targets": 244101,
+  "train_seconds": 122.4,
+  "seconds_per_epoch": 6.12,
+  "inference": {
+    "workload": "score all test targets once (batch 64, window 128)",
+    "seconds_median": 0.2784,
+    "seconds_all": [
+      0.2801,
+      0.2767,
+      0.2784
+    ],
+    "tokens": 244101,
+    "tokens_per_second": 876907.3
+  },
+  "generation_seconds": 0.231,
+  "history": [
+    {
+      "epoch": 1,
+      "train_ce": 7.749381465340343,
+      "valid_ce": 6.413609657316868,
+      "train_ppl": 2320.136885615703,
+      "valid_ppl": 610.0919340182627,
+      "epoch_seconds": 7.73,
+      "lr_end": 0.00085,
+      "grad_norm_mean": 0.47607523683957226,
+      "grad_norm_max": 1.585440993309021,
+      "step_loss_std": 0.11832012838643759,
+      "clipped_frac": 0.14173228346456693
+    },
+    {
+      "epoch": 2,
+      "train_ce": 6.422728998666706,
+      "valid_ce": 5.907246559041997,
+      "train_ppl": 615.6810162603595,
+      "valid_ppl": 367.6923411589396,
+      "epoch_seconds": 6.09,
+      "lr_end": 0.0009958016689451123,
+      "grad_norm_mean": 0.2760536560979415,
+      "grad_norm_max": 0.41217270493507385,
+      "step_loss_std": 0.06561618261406797,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 3,
+      "train_ce": 6.084054688447332,
+      "valid_ce": 5.7182042072507695,
+      "train_ppl": 438.80480929465256,
+      "valid_ppl": 304.35786825250875,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.0009794140436399368,
+      "grad_norm_mean": 0.33042412409632227,
+      "grad_norm_max": 0.7969337701797485,
+      "step_loss_std": 0.05266891377430073,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 4,
+      "train_ce": 5.907693082716165,
+      "valid_ce": 5.620509507917872,
+      "train_ppl": 367.8565611554066,
+      "valid_ppl": 276.02998687629,
+      "epoch_seconds": 6.12,
+      "lr_end": 0.0009510871199777161,
+      "grad_norm_mean": 0.3700684941425098,
+      "grad_norm_max": 0.798759400844574,
+      "step_loss_std": 0.050315147706037705,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 5,
+      "train_ce": 5.786983809224193,
+      "valid_ce": 5.547128364763504,
+      "train_ppl": 326.0281766991485,
+      "valid_ppl": 256.4999230891738,
+      "epoch_seconds": 6.13,
+      "lr_end": 0.0009116084911872929,
+      "grad_norm_mean": 0.41395806773441046,
+      "grad_norm_max": 0.933212161064148,
+      "step_loss_std": 0.053849437440797635,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 6,
+      "train_ce": 5.692307580093725,
+      "valid_ce": 5.491632101688383,
+      "train_ppl": 296.5772072814592,
+      "valid_ppl": 242.65291808693254,
+      "epoch_seconds": 6.04,
+      "lr_end": 0.0008620758091383179,
+      "grad_norm_mean": 0.44146318745425367,
+      "grad_norm_max": 0.9775506854057312,
+      "step_loss_std": 0.04936451509475909,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 7,
+      "train_ce": 5.615824147408393,
+      "valid_ce": 5.455916038790294,
+      "train_ppl": 274.7397119383749,
+      "valid_ppl": 234.13925350170504,
+      "epoch_seconds": 6.02,
+      "lr_end": 0.0008038662655602338,
+      "grad_norm_mean": 0.5130260105677477,
+      "grad_norm_max": 1.135918140411377,
+      "step_loss_std": 0.05570229384876995,
+      "clipped_frac": 0.003937007874015748
+    },
+    {
+      "epoch": 8,
+      "train_ce": 5.5501176675185535,
+      "valid_ce": 5.420267548856923,
+      "train_ppl": 257.26782619153676,
+      "valid_ppl": 225.93956428826644,
+      "epoch_seconds": 6.02,
+      "lr_end": 0.0007385983010194346,
+      "grad_norm_mean": 0.5434147099575658,
+      "grad_norm_max": 1.3644356727600098,
+      "step_loss_std": 0.052986341420879796,
+      "clipped_frac": 0.011811023622047244
+    },
+    {
+      "epoch": 9,
+      "train_ce": 5.496794026513081,
+      "valid_ce": 5.396282170689544,
+      "train_ppl": 243.9087125785366,
+      "valid_ppl": 220.58479321390774,
+      "epoch_seconds": 6.02,
+      "lr_end": 0.0006680866062866371,
+      "grad_norm_mean": 0.5716764527981676,
+      "grad_norm_max": 1.1876763105392456,
+      "step_loss_std": 0.05470002397627434,
+      "clipped_frac": 0.01968503937007874
+    },
+    {
+      "epoch": 10,
+      "train_ce": 5.451967750041927,
+      "valid_ce": 5.373920222843269,
+      "train_ppl": 233.21662671859414,
+      "valid_ppl": 215.70683120813752,
+      "epoch_seconds": 6.01,
+      "lr_end": 0.0005942916672228525,
+      "grad_norm_mean": 0.5789137968397516,
+      "grad_norm_max": 1.296433448791504,
+      "step_loss_std": 0.0490798693455332,
+      "clipped_frac": 0.023622047244094488
+    },
+    {
+      "epoch": 11,
+      "train_ce": 5.412491644281247,
+      "valid_ce": 5.350461146439037,
+      "train_ppl": 224.1894928090215,
+      "valid_ppl": 210.70544153027308,
+      "epoch_seconds": 6.01,
+      "lr_end": 0.0005192652560227072,
+      "grad_norm_mean": 0.5874566730317168,
+      "grad_norm_max": 1.7220138311386108,
+      "step_loss_std": 0.05575724732043587,
+      "clipped_frac": 0.04330708661417323
+    },
+    {
+      "epoch": 12,
+      "train_ce": 5.380180240147679,
+      "valid_ce": 5.337336987106302,
+      "train_ppl": 217.0613950772797,
+      "valid_ppl": 207.9581769455309,
+      "epoch_seconds": 6.01,
+      "lr_end": 0.00044509338436011836,
+      "grad_norm_mean": 0.5818193063257248,
+      "grad_norm_max": 1.2844972610473633,
+      "step_loss_std": 0.053418805050667637,
+      "clipped_frac": 0.031496062992125984
+    },
+    {
+      "epoch": 13,
+      "train_ce": 5.352894230610293,
+      "valid_ce": 5.331334187698756,
+      "train_ppl": 211.21872978840804,
+      "valid_ppl": 206.71358497938502,
+      "epoch_seconds": 6.01,
+      "lr_end": 0.00037383830454983005,
+      "grad_norm_mean": 0.5829064125620474,
+      "grad_norm_max": 1.2415472269058228,
+      "step_loss_std": 0.05587841921270003,
+      "clipped_frac": 0.01968503937007874
+    },
+    {
+      "epoch": 14,
+      "train_ce": 5.329401146122545,
+      "valid_ce": 5.311871467608599,
+      "train_ppl": 206.31438498465164,
+      "valid_ppl": 202.72927486213695,
+      "epoch_seconds": 6.01,
+      "lr_end": 0.0003074811713069947,
+      "grad_norm_mean": 0.6228573043046035,
+      "grad_norm_max": 1.4262282848358154,
+      "step_loss_std": 0.0555380125626528,
+      "clipped_frac": 0.047244094488188976
+    },
+    {
+      "epoch": 15,
+      "train_ce": 5.3096349561558736,
+      "valid_ce": 5.306966266203789,
+      "train_ppl": 202.27637516356953,
+      "valid_ppl": 201.73728188997524,
+      "epoch_seconds": 6.01,
+      "lr_end": 0.0002478669583199181,
+      "grad_norm_mean": 0.6166654422761887,
+      "grad_norm_max": 1.192791223526001,
+      "step_loss_std": 0.04938888626735412,
+      "clipped_frac": 0.051181102362204724
+    },
+    {
+      "epoch": 16,
+      "train_ce": 5.293001350386115,
+      "valid_ce": 5.302982584898727,
+      "train_ppl": 198.93961776935507,
+      "valid_ppl": 200.93522348481625,
+      "epoch_seconds": 6.01,
+      "lr_end": 0.0001966531611589353,
+      "grad_norm_mean": 0.5987602532144607,
+      "grad_norm_max": 1.453136682510376,
+      "step_loss_std": 0.05239599375568519,
+      "clipped_frac": 0.01968503937007874
+    },
+    {
+      "epoch": 17,
+      "train_ce": 5.280249669270256,
+      "valid_ce": 5.298276798219057,
+      "train_ppl": 196.41890899612002,
+      "valid_ppl": 199.9918864987807,
+      "epoch_seconds": 6.02,
+      "lr_end": 0.00015526371277025197,
+      "grad_norm_mean": 0.5719301214837652,
+      "grad_norm_max": 1.572324275970459,
+      "step_loss_std": 0.05469946691565124,
+      "clipped_frac": 0.011811023622047244
+    },
+    {
+      "epoch": 18,
+      "train_ce": 5.269583730292267,
+      "valid_ce": 5.294099714693131,
+      "train_ppl": 194.33504981143457,
+      "valid_ppl": 199.1582459895015,
+      "epoch_seconds": 6.02,
+      "lr_end": 0.00012484939287443146,
+      "grad_norm_mean": 0.5424121560778205,
+      "grad_norm_max": 1.0524252653121948,
+      "step_loss_std": 0.051046320309689024,
+      "clipped_frac": 0.007874015748031496
+    },
+    {
+      "epoch": 19,
+      "train_ce": 5.261713695765406,
+      "valid_ce": 5.289518944769028,
+      "train_ppl": 192.81162881063568,
+      "valid_ppl": 198.24803421311557,
+      "epoch_seconds": 6.01,
+      "lr_end": 0.00010625583203465884,
+      "grad_norm_mean": 0.5420530675433752,
+      "grad_norm_max": 1.0613272190093994,
+      "step_loss_std": 0.05237217279660164,
+      "clipped_frac": 0.007874015748031496
+    },
+    {
+      "epoch": 20,
+      "train_ce": 5.256271496405059,
+      "valid_ce": 5.289319981433098,
+      "train_ppl": 191.7651596174604,
+      "valid_ppl": 198.20859404659075,
+      "epoch_seconds": 6.01,
+      "lr_end": 0.0001,
+      "grad_norm_mean": 0.5543501449851539,
+      "grad_norm_max": 1.220062017440796,
+      "step_loss_std": 0.051717163983860615,
+      "clipped_frac": 0.003937007874015748
+    }
+  ],
+  "samples": [
+    {
+      "prompt": "the city is located in",
+      "continuation": "the state . <eos> = = = the area = = = <eos> the noisy miner is currently by a small @-@ shaped in size and a large pressure is an extension with two years . <eos> = = ="
+    },
+    {
+      "prompt": "in 1995 , the band released",
+      "continuation": "a \" new hop \" , saying that the song of the series of a new song by the recording award . <eos> = = = casting , = = = <eos> the episode 's best game had a positive"
+    },
+    {
+      "prompt": "the game received",
+      "continuation": "the season on the chart \" , a new @-@ star disc . by the end of the end film , was released the album , and released in the video with the best albums and is nominated , that"
+    },
+    {
+      "prompt": "he was born in",
+      "continuation": "the united states . <eos> = = = reception = = = <eos> in the early 1950s , nesbitt has been considered to the first three months of the album 's best album to an official studio album was released"
+    },
+    {
+      "prompt": "during the war , the",
+      "continuation": "state was held with a new area to the rear of the missouri in the town of the region . <eos> after the time , the viet cong was killed at the time , and on august 14 , the"
+    }
+  ],
+  "greedy": [
+    {
+      "prompt": "the city is located in",
+      "continuation": "the united states . the first of the largest government was built in the united states . the first phase of the storm was built in the united states . the first day of the storm was the first time"
+    },
+    {
+      "prompt": "in 1995 , the band released",
+      "continuation": "the song of the album , and the song was released in the united states . <eos> = = = = = = = = = <eos> the album was released in the united states , and the first time"
+    },
+    {
+      "prompt": "the game received",
+      "continuation": "the first time , and the first time , the first game was released in the united states . <eos> = = = = = = = = = <eos> the album was released in the united states , and"
+    },
+    {
+      "prompt": "he was born in",
+      "continuation": "the united states . <eos> = = = = = = = = = <eos> the film was released in the united states , and the first time of the album , and the song was released in the united"
+    },
+    {
+      "prompt": "during the war , the",
+      "continuation": "first time of the season was a major force of the city . <eos> = = = = = = = = <eos> the missouri river was built in the united states , and the first time of the city"
+    }
+  ],
+  "sample_repetition": {
+    "distinct_1": 0.665,
+    "distinct_2": 0.908,
+    "repeated_trigram_rate": 0.037
+  },
+  "greedy_repetition": {
+    "distinct_1": 0.42,
+    "distinct_2": 0.605,
+    "repeated_trigram_rate": 0.289
+  },
+  "embedding_coverage": null,
+  "hardware": {
+    "device": "cuda",
+    "torch": "2.11.0+cu128",
+    "python": "3.12.10",
+    "os": "Windows 11",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "cpu_count": 16,
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpu_mem_gb": 17.1
+  },
+  "corpus": {
+    "vocab_size": 28913,
+    "train_tokens": 2075677,
+    "train_unk_rate": 0.02631671498022091,
+    "valid_tokens": 216347,
+    "valid_unk_rate": 0.05416298816253519,
+    "test_tokens": 244102,
+    "test_unk_rate": 0.062342791128298825
+  }
+}

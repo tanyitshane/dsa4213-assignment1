@@ -1,0 +1,18 @@
+{
+  "method": "skip-gram negative sampling (gensim)",
+  "params": {
+    "vector_size": 100,
+    "window": 5,
+    "min_count": 1,
+    "sg": 1,
+    "negative": 5,
+    "epochs": 5,
+    "workers": 1,
+    "seed": 42
+  },
+  "train_seconds": 22.8,
+  "sentences": 23767,
+  "tokens": 2075677,
+  "vectors": 28912,
+  "hardware": "CPU (gensim)"
+}

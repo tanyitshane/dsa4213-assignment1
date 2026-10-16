@@ -1,0 +1,942 @@
+{
+  "task": "AG News 4-way topic classification",
+  "labels": [
+    "World",
+    "Sports",
+    "Business",
+    "Sci/Tech"
+  ],
+  "n_train": 10000,
+  "n_val": 2000,
+  "n_test": 7600,
+  "train_text_stats": {
+    "token_unk_rate": 0.0702,
+    "mean_len": 44.4,
+    "truncated_frac": 0.0015
+  },
+  "test_text_stats": {
+    "token_unk_rate": 0.0713,
+    "mean_len": 44.0,
+    "truncated_frac": 0.0024
+  },
+  "majority_baseline_acc": 0.25,
+  "results": {
+    "rnn:mean": {
+      "C": 0.1,
+      "val_macro_f1": 0.6169,
+      "test_accuracy": 0.612,
+      "test_macro_f1": 0.611,
+      "per_class_f1": [
+        0.6155,
+        0.7168,
+        0.537,
+        0.5747
+      ],
+      "confusion": [
+        [
+          1191,
+          182,
+          268,
+          259
+        ],
+        [
+          207,
+          1378,
+          146,
+          169
+        ],
+        [
+          332,
+          183,
+          980,
+          405
+        ],
+        [
+          240,
+          202,
+          356,
+          1102
+        ]
+      ],
+      "model": "rnn",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 182.52408223991245
+    },
+    "rnn:last": {
+      "C": 0.01,
+      "val_macro_f1": 0.4774,
+      "test_accuracy": 0.49,
+      "test_macro_f1": 0.4839,
+      "per_class_f1": [
+        0.4834,
+        0.625,
+        0.3312,
+        0.496
+      ],
+      "confusion": [
+        [
+          993,
+          217,
+          302,
+          388
+        ],
+        [
+          304,
+          1201,
+          184,
+          211
+        ],
+        [
+          525,
+          328,
+          538,
+          509
+        ],
+        [
+          386,
+          197,
+          325,
+          992
+        ]
+      ],
+      "model": "rnn",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 182.52408223991245
+    },
+    "rnn:emb": {
+      "C": 1.0,
+      "val_macro_f1": 0.6013,
+      "test_accuracy": 0.6055,
+      "test_macro_f1": 0.604,
+      "per_class_f1": [
+        0.6045,
+        0.7029,
+        0.5211,
+        0.5877
+      ],
+      "confusion": [
+        [
+          1163,
+          200,
+          301,
+          236
+        ],
+        [
+          189,
+          1376,
+          168,
+          167
+        ],
+        [
+          360,
+          228,
+          957,
+          355
+        ],
+        [
+          236,
+          211,
+          347,
+          1106
+        ]
+      ],
+      "model": "rnn",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 182.52408223991245
+    },
+    "lstm:mean": {
+      "C": 1.0,
+      "val_macro_f1": 0.5783,
+      "test_accuracy": 0.5664,
+      "test_macro_f1": 0.5657,
+      "per_class_f1": [
+        0.5899,
+        0.6246,
+        0.5342,
+        0.5144
+      ],
+      "confusion": [
+        [
+          1132,
+          264,
+          243,
+          261
+        ],
+        [
+          256,
+          1216,
+          183,
+          245
+        ],
+        [
+          267,
+          239,
+          981,
+          413
+        ],
+        [
+          283,
+          275,
+          366,
+          976
+        ]
+      ],
+      "model": "lstm",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 237.7724015533694
+    },
+    "lstm:last": {
+      "C": 10.0,
+      "val_macro_f1": 0.409,
+      "test_accuracy": 0.4004,
+      "test_macro_f1": 0.3977,
+      "per_class_f1": [
+        0.4109,
+        0.4558,
+        0.326,
+        0.3981
+      ],
+      "confusion": [
+        [
+          817,
+          408,
+          298,
+          377
+        ],
+        [
+          370,
+          900,
+          288,
+          342
+        ],
+        [
+          437,
+          416,
+          552,
+          495
+        ],
+        [
+          453,
+          325,
+          348,
+          774
+        ]
+      ],
+      "model": "lstm",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 237.7724015533694
+    },
+    "lstm:emb": {
+      "C": 0.1,
+      "val_macro_f1": 0.5518,
+      "test_accuracy": 0.5425,
+      "test_macro_f1": 0.5415,
+      "per_class_f1": [
+        0.5388,
+        0.6037,
+        0.4927,
+        0.5309
+      ],
+      "confusion": [
+        [
+          1032,
+          308,
+          302,
+          258
+        ],
+        [
+          289,
+          1189,
+          194,
+          228
+        ],
+        [
+          363,
+          263,
+          907,
+          367
+        ],
+        [
+          247,
+          279,
+          379,
+          995
+        ]
+      ],
+      "model": "lstm",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 237.7724015533694
+    },
+    "transformer:mean": {
+      "C": 1.0,
+      "val_macro_f1": 0.7223,
+      "test_accuracy": 0.7059,
+      "test_macro_f1": 0.705,
+      "per_class_f1": [
+        0.7145,
+        0.8233,
+        0.6262,
+        0.656
+      ],
+      "confusion": [
+        [
+          1384,
+          127,
+          214,
+          175
+        ],
+        [
+          123,
+          1582,
+          95,
+          100
+        ],
+        [
+          258,
+          124,
+          1165,
+          353
+        ],
+        [
+          209,
+          110,
+          347,
+          1234
+        ]
+      ],
+      "model": "transformer",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 172.64466766568583
+    },
+    "transformer:last": {
+      "C": 0.1,
+      "val_macro_f1": 0.6394,
+      "test_accuracy": 0.6418,
+      "test_macro_f1": 0.64,
+      "per_class_f1": [
+        0.6555,
+        0.7765,
+        0.5219,
+        0.6059
+      ],
+      "confusion": [
+        [
+          1287,
+          155,
+          256,
+          202
+        ],
+        [
+          156,
+          1489,
+          120,
+          135
+        ],
+        [
+          366,
+          159,
+          941,
+          434
+        ],
+        [
+          218,
+          132,
+          389,
+          1161
+        ]
+      ],
+      "model": "transformer",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 172.64466766568583
+    },
+    "transformer:emb": {
+      "C": 10.0,
+      "val_macro_f1": 0.6578,
+      "test_accuracy": 0.6489,
+      "test_macro_f1": 0.6466,
+      "per_class_f1": [
+        0.6681,
+        0.7642,
+        0.5291,
+        0.625
+      ],
+      "confusion": [
+        [
+          1285,
+          156,
+          273,
+          186
+        ],
+        [
+          142,
+          1499,
+          138,
+          121
+        ],
+        [
+          327,
+          205,
+          959,
+          409
+        ],
+        [
+          193,
+          163,
+          355,
+          1189
+        ]
+      ],
+      "model": "transformer",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 172.64466766568583
+    },
+    "lstm_frozen_random:mean": {
+      "C": 0.1,
+      "val_macro_f1": 0.5317,
+      "test_accuracy": 0.5357,
+      "test_macro_f1": 0.5347,
+      "per_class_f1": [
+        0.5284,
+        0.6163,
+        0.5097,
+        0.4844
+      ],
+      "confusion": [
+        [
+          1024,
+          317,
+          243,
+          316
+        ],
+        [
+          297,
+          1211,
+          162,
+          230
+        ],
+        [
+          308,
+          231,
+          910,
+          451
+        ],
+        [
+          347,
+          271,
+          356,
+          926
+        ]
+      ],
+      "model": "lstm_frozen_random",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 285.15907320853745
+    },
+    "lstm_frozen_random:last": {
+      "C": 10.0,
+      "val_macro_f1": 0.3751,
+      "test_accuracy": 0.3764,
+      "test_macro_f1": 0.3747,
+      "per_class_f1": [
+        0.3508,
+        0.4279,
+        0.3339,
+        0.3861
+      ],
+      "confusion": [
+        [
+          636,
+          508,
+          349,
+          407
+        ],
+        [
+          387,
+          867,
+          341,
+          305
+        ],
+        [
+          340,
+          410,
+          602,
+          548
+        ],
+        [
+          363,
+          367,
+          414,
+          756
+        ]
+      ],
+      "model": "lstm_frozen_random",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 285.15907320853745
+    },
+    "lstm_frozen_random:emb": {
+      "C": 0.1,
+      "val_macro_f1": 0.5263,
+      "test_accuracy": 0.5238,
+      "test_macro_f1": 0.5228,
+      "per_class_f1": [
+        0.5332,
+        0.5757,
+        0.5042,
+        0.4782
+      ],
+      "confusion": [
+        [
+          1028,
+          299,
+          274,
+          299
+        ],
+        [
+          329,
+          1137,
+          205,
+          229
+        ],
+        [
+          310,
+          273,
+          932,
+          385
+        ],
+        [
+          289,
+          341,
+          386,
+          884
+        ]
+      ],
+      "model": "lstm_frozen_random",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 285.15907320853745
+    },
+    "lstm_w2v:mean": {
+      "C": 0.1,
+      "val_macro_f1": 0.7328,
+      "test_accuracy": 0.7239,
+      "test_macro_f1": 0.723,
+      "per_class_f1": [
+        0.7503,
+        0.8479,
+        0.618,
+        0.676
+      ],
+      "confusion": [
+        [
+          1427,
+          119,
+          213,
+          141
+        ],
+        [
+          106,
+          1630,
+          75,
+          89
+        ],
+        [
+          233,
+          105,
+          1144,
+          418
+        ],
+        [
+          138,
+          91,
+          370,
+          1301
+        ]
+      ],
+      "model": "lstm_w2v",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 200.90556249662936
+    },
+    "lstm_w2v:last": {
+      "C": 0.1,
+      "val_macro_f1": 0.6574,
+      "test_accuracy": 0.6684,
+      "test_macro_f1": 0.6648,
+      "per_class_f1": [
+        0.7,
+        0.8169,
+        0.5121,
+        0.63
+      ],
+      "confusion": [
+        [
+          1378,
+          125,
+          224,
+          173
+        ],
+        [
+          101,
+          1586,
+          108,
+          105
+        ],
+        [
+          378,
+          164,
+          907,
+          451
+        ],
+        [
+          180,
+          108,
+          403,
+          1209
+        ]
+      ],
+      "model": "lstm_w2v",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 200.90556249662936
+    },
+    "lstm_w2v:emb": {
+      "C": 0.1,
+      "val_macro_f1": 0.7831,
+      "test_accuracy": 0.7796,
+      "test_macro_f1": 0.7789,
+      "per_class_f1": [
+        0.7897,
+        0.8917,
+        0.7064,
+        0.7277
+      ],
+      "confusion": [
+        [
+          1521,
+          99,
+          151,
+          129
+        ],
+        [
+          73,
+          1712,
+          50,
+          65
+        ],
+        [
+          209,
+          66,
+          1320,
+          305
+        ],
+        [
+          149,
+          63,
+          316,
+          1372
+        ]
+      ],
+      "model": "lstm_w2v",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 200.90556249662936
+    },
+    "lstm_glove:mean": {
+      "C": 1.0,
+      "val_macro_f1": 0.8108,
+      "test_accuracy": 0.8016,
+      "test_macro_f1": 0.8012,
+      "per_class_f1": [
+        0.8176,
+        0.9093,
+        0.7177,
+        0.7605
+      ],
+      "confusion": [
+        [
+          1564,
+          80,
+          165,
+          91
+        ],
+        [
+          73,
+          1734,
+          46,
+          47
+        ],
+        [
+          175,
+          60,
+          1351,
+          314
+        ],
+        [
+          114,
+          40,
+          303,
+          1443
+        ]
+      ],
+      "model": "lstm_glove",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 198.35418483320646
+    },
+    "lstm_glove:last": {
+      "C": 0.01,
+      "val_macro_f1": 0.7372,
+      "test_accuracy": 0.7304,
+      "test_macro_f1": 0.727,
+      "per_class_f1": [
+        0.7596,
+        0.8643,
+        0.5741,
+        0.7099
+      ],
+      "confusion": [
+        [
+          1506,
+          93,
+          193,
+          108
+        ],
+        [
+          69,
+          1669,
+          90,
+          72
+        ],
+        [
+          350,
+          145,
+          1019,
+          386
+        ],
+        [
+          140,
+          55,
+          348,
+          1357
+        ]
+      ],
+      "model": "lstm_glove",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 198.35418483320646
+    },
+    "lstm_glove:emb": {
+      "C": 0.1,
+      "val_macro_f1": 0.8696,
+      "test_accuracy": 0.8711,
+      "test_macro_f1": 0.8707,
+      "per_class_f1": [
+        0.8747,
+        0.95,
+        0.8197,
+        0.8386
+      ],
+      "confusion": [
+        [
+          1668,
+          65,
+          108,
+          59
+        ],
+        [
+          42,
+          1824,
+          21,
+          13
+        ],
+        [
+          115,
+          26,
+          1562,
+          197
+        ],
+        [
+          89,
+          25,
+          220,
+          1566
+        ]
+      ],
+      "model": "lstm_glove",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 198.35418483320646
+    }
+  },
+  "errors": {
+    "compared": [
+      "lstm:mean",
+      "transformer:mean"
+    ],
+    "counts": {
+      "only_lstm:mean_right": 695,
+      "only_transformer:mean_right": 1755,
+      "both_wrong": 1540
+    },
+    "only_a_right": [
+      {
+        "text": "Australian train crash injures scores A high-speed passenger train carrying more than 160 people jumped the rails and crashed in eastern Australia, injuring most of those on board, officials said.",
+        "true": "World",
+        "lstm:mean": "World",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Ravens' Offensive Coordinator Resigns (AP) AP - Baltimore Ravens offensive coordinator Matt Cavanaugh resigned under pressure Monday after meeting with head coach Brian Billick, who finally lost patience with the team's sputtering attack.",
+        "true": "Sports",
+        "lstm:mean": "Sports",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "Japan steps up efforts for Iraq hostage release Japan has made last-ditch efforts to secure the release of a Japanese hostage facing execution in Iraq. A Japanese government official says efforts are still being made to free Shosei Koda, 24, but there have been no reports of any progress.",
+        "true": "World",
+        "lstm:mean": "World",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Spanish buy Luton airport operator in 551m deal Luton Airport was bought by the Spanish yesterday as part of a 551m takeover deal which will net the men who run it almost 60m.",
+        "true": "Business",
+        "lstm:mean": "Business",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "4 French schoolgirls expelled for wearing head scarves Two Muslim girls were expelled Wednesday from high school for refusing to remove their head scarf -- the fourth such expulsions in two days as officials began taking action against ",
+        "true": "World",
+        "lstm:mean": "World",
+        "transformer:mean": "Sports"
+      },
+      {
+        "text": "Seahawks Looking at Acquiring Jerry Rice (AP) AP - Jerry Rice could be headed north to reunite with Seattle Seahawks coach Mike Holmgren.",
+        "true": "Sports",
+        "lstm:mean": "Sports",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "Bienvenue, Carrefour Lesser-known French retailer turns in a strong first half. Investors, take notice.",
+        "true": "Business",
+        "lstm:mean": "Business",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Odd couple: Schwartz and McNealy It hasn't even been eight months since Sun Microsystems promoted Jonathan Schwartz to be Chief Executive Scott McNealy's right-hand man, but the two are already acting like an old couple. Missing Links",
+        "true": "Sci/Tech",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Sports"
+      }
+    ],
+    "only_b_right": [
+      {
+        "text": "CA offers usage-based pricing for mainframe tools OCTOBER 07, 2004 (IDG NEWS SERVICE) - Computer Associates International Inc. introduced a usage-based pricing and licensing option for its mainframe management products today, aligning its offerings with IBM #39;s on-demand model.",
+        "true": "Sci/Tech",
+        "lstm:mean": "Business",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Judge Threatens to Punish MCI Over Fees It Has Paid The judge who presided over the Securities and Exchange Commission #39;s fraud suit against MCI, the long-distance telephone company, threatened to punish the company yesterday for ignoring his ",
+        "true": "Business",
+        "lstm:mean": "World",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Something Oozed on Titan #39;s Surface Summary - (Nov 8, 2004) NASA #39;s Cassini spacecraft took this image of Titan as it sped past the moon on Oct. 26, 2004. It was taken from an altitude of 2,500 km (1,553 miles) using the spacecraft #39;s aperture ",
+        "true": "Sci/Tech",
+        "lstm:mean": "Business",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Kerry assails Bush troop withdrawal plan (AFP) AFP - Democratic White House hopeful Senator John Kerry warned that President George W. Bush's plan to withdraw 70,000 troops from Europe and Asia would hinder the war on terrorism and embolden North Korea.",
+        "true": "World",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "Unskilled jobs to go There will be no jobs for unskilled workers in Britain within 10 years, the leading employers #39; organisation claims today. The prediction is based on the growth in ",
+        "true": "Business",
+        "lstm:mean": "World",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Apple Sailing on Digital River the iPod -s a nifty little device, primarily allowing you to listen to downloaded music, but also giving you the opportunity ",
+        "true": "Sci/Tech",
+        "lstm:mean": "Sports",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Microsoft Ends Decade of Antitrust Suits  SEATTLE/NEW YORK (Reuters) - Microsoft Corp. &lt;A HREF=\"http://www.investor.reuters.com/FullQuote.aspx?ticker=MSFT.O target=/stocks/quickinfo/fullquote\"&gt;MSFT.O&lt;/A&gt; said  on Monday it had agreed to settle antitrust lawsuits with  Novell Inc. &lt;A H",
+        "true": "Business",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Fierce Clashes in Iraq Kill 36; 203 Hurt US troops battled Shiite militiamen loyal to rebel cleric Muqtada al-Sadr in the Baghdad slum of Sadr City on Tuesday in fierce fighting that killed 36 people, including ",
+        "true": "World",
+        "lstm:mean": "Business",
+        "transformer:mean": "World"
+      }
+    ],
+    "both_wrong": [
+      {
+        "text": "Ichiro with 260 hits, Writes First New Chapter in 84 Years Japans  quot;Baseball talent quot; Suzuki Ichiro (31,Seattle Mariners) has leapfrogged 84 years of outdated records of most hits in a season and stepped into the 260-hit peak.",
+        "true": "Sports",
+        "lstm:mean": "Business",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Board with Mukesh: Reliance Mumbai, Nov. 26: Mukesh Ambani apparently commands the full support of the board on all recent decisions, including the controversial one that elevated him to the final authority in the group.",
+        "true": "Business",
+        "lstm:mean": "Sports",
+        "transformer:mean": "Sports"
+      },
+      {
+        "text": "Arthritis drug withdrawn after trial A prescription painkiller used by more than 250,000 Australians to treat arthritis has been withdrawn from sale after a clinical trial found it doubled the risk of heart attack and stroke.",
+        "true": "Business",
+        "lstm:mean": "World",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "IBM reported to be exiting PC business IBM #39;s possible exit from the personal-computer business would be the latest move in what amounts to a long goodbye from a field it pioneered and revolutionized.",
+        "true": "Business",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Microsoft prepares to ship new corporate IM server A little over a year after introducing the first version of Office Live Communications Server, Microsoft Corp. in December plans to release the next version of its enterprise instant messaging software, it said Monday.",
+        "true": "Sci/Tech",
+        "lstm:mean": "Business",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "FM, Reddy to attend IMF-WB meet Finance Minister P Chidambaram will lead a high-level delegation for the annual IMF-World Bank meeting in Washington from October 1, where New Delhi would press for higher aid flows for infrastructure and social development.",
+        "true": "Business",
+        "lstm:mean": "Sports",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Global Warming May Spur Fiercer Hurricanes - Experts (Reuters) Reuters - As Hurricane Ivan and its powerful\\winds churned through the Gulf of Mexico, scientists told\\Congress on Wednesday that global warming could produce\\stronger and more destructive hurricanes in the future.",
+        "true": "Sci/Tech",
+        "lstm:mean": "World",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "Spain Condemns Racial Abuse, Defends Reputation  MADRID (Reuters) - The Madrid council has condemned the  racist behavior of fans that marred Wednesday's friendly  between Spain and England and said that the events should not  be allowed to harm the city's bid to host the 2012 Olympics.",
+        "true": "Sports",
+        "lstm:mean": "World",
+        "transformer:mean": "World"
+      }
+    ]
+  }
+}

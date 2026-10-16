@@ -1,0 +1,942 @@
+{
+  "task": "AG News 4-way topic classification",
+  "labels": [
+    "World",
+    "Sports",
+    "Business",
+    "Sci/Tech"
+  ],
+  "n_train": 10000,
+  "n_val": 2000,
+  "n_test": 7600,
+  "train_text_stats": {
+    "token_unk_rate": 0.0703,
+    "mean_len": 44.3,
+    "truncated_frac": 0.0013
+  },
+  "test_text_stats": {
+    "token_unk_rate": 0.0713,
+    "mean_len": 44.0,
+    "truncated_frac": 0.0024
+  },
+  "majority_baseline_acc": 0.25,
+  "results": {
+    "rnn:mean": {
+      "C": 0.1,
+      "val_macro_f1": 0.6056,
+      "test_accuracy": 0.625,
+      "test_macro_f1": 0.6243,
+      "per_class_f1": [
+        0.6212,
+        0.7215,
+        0.5746,
+        0.58
+      ],
+      "confusion": [
+        [
+          1208,
+          188,
+          239,
+          265
+        ],
+        [
+          222,
+          1385,
+          125,
+          168
+        ],
+        [
+          292,
+          175,
+          1046,
+          387
+        ],
+        [
+          267,
+          191,
+          331,
+          1111
+        ]
+      ],
+      "model": "rnn",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 183.58483969539972
+    },
+    "rnn:last": {
+      "C": 0.01,
+      "val_macro_f1": 0.4806,
+      "test_accuracy": 0.4892,
+      "test_macro_f1": 0.483,
+      "per_class_f1": [
+        0.4537,
+        0.6331,
+        0.3455,
+        0.4999
+      ],
+      "confusion": [
+        [
+          911,
+          290,
+          319,
+          380
+        ],
+        [
+          296,
+          1243,
+          146,
+          215
+        ],
+        [
+          547,
+          273,
+          559,
+          521
+        ],
+        [
+          362,
+          221,
+          312,
+          1005
+        ]
+      ],
+      "model": "rnn",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 183.58483969539972
+    },
+    "rnn:emb": {
+      "C": 1.0,
+      "val_macro_f1": 0.6226,
+      "test_accuracy": 0.6178,
+      "test_macro_f1": 0.6169,
+      "per_class_f1": [
+        0.5923,
+        0.7138,
+        0.5695,
+        0.5921
+      ],
+      "confusion": [
+        [
+          1125,
+          251,
+          271,
+          253
+        ],
+        [
+          218,
+          1387,
+          141,
+          154
+        ],
+        [
+          290,
+          174,
+          1051,
+          385
+        ],
+        [
+          266,
+          174,
+          328,
+          1132
+        ]
+      ],
+      "model": "rnn",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 183.58483969539972
+    },
+    "lstm:mean": {
+      "C": 10.0,
+      "val_macro_f1": 0.5746,
+      "test_accuracy": 0.5799,
+      "test_macro_f1": 0.5789,
+      "per_class_f1": [
+        0.5944,
+        0.637,
+        0.5521,
+        0.5319
+      ],
+      "confusion": [
+        [
+          1151,
+          271,
+          229,
+          249
+        ],
+        [
+          246,
+          1254,
+          176,
+          224
+        ],
+        [
+          279,
+          230,
+          1001,
+          390
+        ],
+        [
+          297,
+          282,
+          320,
+          1001
+        ]
+      ],
+      "model": "lstm",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 222.72395095922218
+    },
+    "lstm:last": {
+      "C": 0.1,
+      "val_macro_f1": 0.4273,
+      "test_accuracy": 0.3963,
+      "test_macro_f1": 0.3937,
+      "per_class_f1": [
+        0.4089,
+        0.4406,
+        0.3154,
+        0.4098
+      ],
+      "confusion": [
+        [
+          810,
+          399,
+          281,
+          410
+        ],
+        [
+          373,
+          846,
+          325,
+          356
+        ],
+        [
+          428,
+          414,
+          534,
+          524
+        ],
+        [
+          451,
+          281,
+          346,
+          822
+        ]
+      ],
+      "model": "lstm",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 222.72395095922218
+    },
+    "lstm:emb": {
+      "C": 0.1,
+      "val_macro_f1": 0.5634,
+      "test_accuracy": 0.5683,
+      "test_macro_f1": 0.5679,
+      "per_class_f1": [
+        0.5521,
+        0.6027,
+        0.5545,
+        0.5624
+      ],
+      "confusion": [
+        [
+          1036,
+          345,
+          287,
+          232
+        ],
+        [
+          302,
+          1181,
+          195,
+          222
+        ],
+        [
+          261,
+          235,
+          1038,
+          366
+        ],
+        [
+          254,
+          258,
+          324,
+          1064
+        ]
+      ],
+      "model": "lstm",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 222.72395095922218
+    },
+    "transformer:mean": {
+      "C": 1.0,
+      "val_macro_f1": 0.7293,
+      "test_accuracy": 0.7232,
+      "test_macro_f1": 0.7219,
+      "per_class_f1": [
+        0.7375,
+        0.8313,
+        0.6489,
+        0.6698
+      ],
+      "confusion": [
+        [
+          1416,
+          132,
+          189,
+          163
+        ],
+        [
+          108,
+          1616,
+          82,
+          94
+        ],
+        [
+          222,
+          121,
+          1196,
+          361
+        ],
+        [
+          194,
+          119,
+          319,
+          1268
+        ]
+      ],
+      "model": "transformer",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 171.4140778218206
+    },
+    "transformer:last": {
+      "C": 0.1,
+      "val_macro_f1": 0.6646,
+      "test_accuracy": 0.6518,
+      "test_macro_f1": 0.6503,
+      "per_class_f1": [
+        0.6719,
+        0.7916,
+        0.5394,
+        0.5984
+      ],
+      "confusion": [
+        [
+          1296,
+          148,
+          259,
+          197
+        ],
+        [
+          128,
+          1533,
+          129,
+          110
+        ],
+        [
+          323,
+          153,
+          1003,
+          421
+        ],
+        [
+          211,
+          139,
+          428,
+          1122
+        ]
+      ],
+      "model": "transformer",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 171.4140778218206
+    },
+    "transformer:emb": {
+      "C": 0.01,
+      "val_macro_f1": 0.6632,
+      "test_accuracy": 0.6697,
+      "test_macro_f1": 0.6689,
+      "per_class_f1": [
+        0.6668,
+        0.769,
+        0.5971,
+        0.6427
+      ],
+      "confusion": [
+        [
+          1264,
+          174,
+          257,
+          205
+        ],
+        [
+          166,
+          1483,
+          119,
+          132
+        ],
+        [
+          265,
+          145,
+          1098,
+          392
+        ],
+        [
+          196,
+          155,
+          304,
+          1245
+        ]
+      ],
+      "model": "transformer",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 171.4140778218206
+    },
+    "lstm_frozen_random:mean": {
+      "C": 10.0,
+      "val_macro_f1": 0.5173,
+      "test_accuracy": 0.5362,
+      "test_macro_f1": 0.5357,
+      "per_class_f1": [
+        0.5338,
+        0.5891,
+        0.5105,
+        0.5093
+      ],
+      "confusion": [
+        [
+          1014,
+          319,
+          289,
+          278
+        ],
+        [
+          293,
+          1147,
+          207,
+          253
+        ],
+        [
+          298,
+          252,
+          945,
+          405
+        ],
+        [
+          294,
+          276,
+          361,
+          969
+        ]
+      ],
+      "model": "lstm_frozen_random",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 322.7867643424868
+    },
+    "lstm_frozen_random:last": {
+      "C": 0.1,
+      "val_macro_f1": 0.404,
+      "test_accuracy": 0.3686,
+      "test_macro_f1": 0.3672,
+      "per_class_f1": [
+        0.3856,
+        0.3951,
+        0.3287,
+        0.3594
+      ],
+      "confusion": [
+        [
+          784,
+          428,
+          336,
+          352
+        ],
+        [
+          438,
+          776,
+          337,
+          349
+        ],
+        [
+          422,
+          467,
+          576,
+          435
+        ],
+        [
+          522,
+          357,
+          356,
+          665
+        ]
+      ],
+      "model": "lstm_frozen_random",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 322.7867643424868
+    },
+    "lstm_frozen_random:emb": {
+      "C": 0.01,
+      "val_macro_f1": 0.5406,
+      "test_accuracy": 0.553,
+      "test_macro_f1": 0.5517,
+      "per_class_f1": [
+        0.56,
+        0.6284,
+        0.5052,
+        0.5131
+      ],
+      "confusion": [
+        [
+          1061,
+          289,
+          264,
+          286
+        ],
+        [
+          260,
+          1247,
+          179,
+          214
+        ],
+        [
+          303,
+          248,
+          918,
+          431
+        ],
+        [
+          265,
+          285,
+          373,
+          977
+        ]
+      ],
+      "model": "lstm_frozen_random",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 322.7867643424868
+    },
+    "lstm_w2v:mean": {
+      "C": 0.1,
+      "val_macro_f1": 0.7222,
+      "test_accuracy": 0.7367,
+      "test_macro_f1": 0.7353,
+      "per_class_f1": [
+        0.7593,
+        0.8524,
+        0.6408,
+        0.6889
+      ],
+      "confusion": [
+        [
+          1453,
+          120,
+          198,
+          129
+        ],
+        [
+          96,
+          1657,
+          66,
+          81
+        ],
+        [
+          233,
+          113,
+          1188,
+          366
+        ],
+        [
+          145,
+          98,
+          356,
+          1301
+        ]
+      ],
+      "model": "lstm_w2v",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 202.75231611504324
+    },
+    "lstm_w2v:last": {
+      "C": 0.01,
+      "val_macro_f1": 0.6659,
+      "test_accuracy": 0.6851,
+      "test_macro_f1": 0.682,
+      "per_class_f1": [
+        0.7254,
+        0.8046,
+        0.5413,
+        0.6565
+      ],
+      "confusion": [
+        [
+          1441,
+          124,
+          221,
+          114
+        ],
+        [
+          135,
+          1567,
+          109,
+          89
+        ],
+        [
+          328,
+          196,
+          976,
+          400
+        ],
+        [
+          169,
+          108,
+          400,
+          1223
+        ]
+      ],
+      "model": "lstm_w2v",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 202.75231611504324
+    },
+    "lstm_w2v:emb": {
+      "C": 0.1,
+      "val_macro_f1": 0.7837,
+      "test_accuracy": 0.7809,
+      "test_macro_f1": 0.7802,
+      "per_class_f1": [
+        0.7902,
+        0.8999,
+        0.7054,
+        0.7251
+      ],
+      "confusion": [
+        [
+          1518,
+          102,
+          164,
+          116
+        ],
+        [
+          71,
+          1730,
+          41,
+          58
+        ],
+        [
+          199,
+          53,
+          1322,
+          326
+        ],
+        [
+          154,
+          60,
+          321,
+          1365
+        ]
+      ],
+      "model": "lstm_w2v",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 202.75231611504324
+    },
+    "lstm_glove:mean": {
+      "C": 10.0,
+      "val_macro_f1": 0.8078,
+      "test_accuracy": 0.7993,
+      "test_macro_f1": 0.7987,
+      "per_class_f1": [
+        0.8158,
+        0.9124,
+        0.7119,
+        0.7547
+      ],
+      "confusion": [
+        [
+          1548,
+          84,
+          181,
+          87
+        ],
+        [
+          59,
+          1761,
+          42,
+          38
+        ],
+        [
+          172,
+          65,
+          1348,
+          315
+        ],
+        [
+          116,
+          50,
+          316,
+          1418
+        ]
+      ],
+      "model": "lstm_glove",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 193.30577480642677
+    },
+    "lstm_glove:last": {
+      "C": 1.0,
+      "val_macro_f1": 0.7382,
+      "test_accuracy": 0.7305,
+      "test_macro_f1": 0.7287,
+      "per_class_f1": [
+        0.7588,
+        0.8754,
+        0.5901,
+        0.6905
+      ],
+      "confusion": [
+        [
+          1461,
+          108,
+          215,
+          116
+        ],
+        [
+          72,
+          1693,
+          78,
+          57
+        ],
+        [
+          294,
+          105,
+          1086,
+          415
+        ],
+        [
+          124,
+          62,
+          402,
+          1312
+        ]
+      ],
+      "model": "lstm_glove",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 193.30577480642677
+    },
+    "lstm_glove:emb": {
+      "C": 0.1,
+      "val_macro_f1": 0.8806,
+      "test_accuracy": 0.87,
+      "test_macro_f1": 0.8697,
+      "per_class_f1": [
+        0.8724,
+        0.9476,
+        0.8211,
+        0.8378
+      ],
+      "confusion": [
+        [
+          1661,
+          66,
+          119,
+          54
+        ],
+        [
+          47,
+          1818,
+          19,
+          16
+        ],
+        [
+          99,
+          29,
+          1560,
+          212
+        ],
+        [
+          101,
+          24,
+          202,
+          1573
+        ]
+      ],
+      "model": "lstm_glove",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 193.30577480642677
+    }
+  },
+  "errors": {
+    "compared": [
+      "lstm:mean",
+      "transformer:mean"
+    ],
+    "counts": {
+      "only_lstm:mean_right": 657,
+      "only_transformer:mean_right": 1746,
+      "both_wrong": 1447
+    },
+    "only_a_right": [
+      {
+        "text": "Australia establish 300-run lead in third India Test (AFP) AFP - Australia batted cautiously in their second innings to build a lead of 300 runs over India with nine wickets in hand in the third cricket Test here.",
+        "true": "World",
+        "lstm:mean": "World",
+        "transformer:mean": "Sports"
+      },
+      {
+        "text": "Worldpay struck by online attack Net payment system Worldpay is under attack from hackers delaying transaction times for hundreds of online retailers.",
+        "true": "Sci/Tech",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "Nektar Shares Continues Rise on Upgrades Shares of Nektar Therapeutics remained active Wednesday following upgrades from two investment firms after drug giant Pfizer Inc. cited its inhalable insulin product in a recent pipeline report.",
+        "true": "Business",
+        "lstm:mean": "Business",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Cricket swings to Calypso once again From the time you touch down in the British Isles, you get an overwhelming sense of grey. The skies are almost always leaden, the clothes people wear are generally either black or neutral shades guaranteed ",
+        "true": "Sports",
+        "lstm:mean": "Sports",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Court Declines to Hear Gay Marriage Case (AP) AP - The Supreme Court on Monday sidestepped a dispute over gay marriages, rejecting a challenge to the nation's only law sanctioning such unions.",
+        "true": "World",
+        "lstm:mean": "World",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "'Smelly' mates guide seabirds Seabirds called prions, which mate for life, find their nests by sniffing out their partners, scientists say.",
+        "true": "Sci/Tech",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "Calif. Aims to Limit Farm-Related Smog (AP) AP - Southern California's smog-fighting agency went after emissions of the bovine variety Friday, adopting the nation's first rules to reduce air pollution from dairy cow manure.",
+        "true": "Sci/Tech",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Japan to Protest to China Over Intruder Submarine  TOKYO (Reuters) - Japan will protest to China after  concluding that a nuclear-powered submarine that intruded into  its waters this week belonged to the Chinese navy, top  government spokesman Hiroyuki Hosoda said on Friday.",
+        "true": "World",
+        "lstm:mean": "World",
+        "transformer:mean": "Business"
+      }
+    ],
+    "only_b_right": [
+      {
+        "text": "Transactions BASEBALL Boston (AL): Activated DH Ellis Burks from the 60-day disabled list; released P Phil Seibel. Milwaukee (NL): Sent INF Matt Erickson outright to Indianapolis (IL).",
+        "true": "Sports",
+        "lstm:mean": "Business",
+        "transformer:mean": "Sports"
+      },
+      {
+        "text": "There #39;s a lot on the line for drivers at Richmond this weekend RICHMOND, Va. - Its the 26th race of the Nextel Cup season, and for the first time in the sports history, a season will end before, well, the season.",
+        "true": "Sports",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Sports"
+      },
+      {
+        "text": "Feed-Tube Law Is Struck Down in Florida Case The court said that Gov. Jeb Bush violated separation of powers when he signed a law to keep Theresa Schiavo alive.",
+        "true": "World",
+        "lstm:mean": "Business",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "Gunfire Erupts in Pro-Aristide Haiti Slum PORT-AU-PRINCE, Haiti Oct. 3, 2004 - Gunfire erupted in a slum teeming with loyalists of ousted President Jean-Bertrand Aristide on Sunday, sending people scattering through trash-strewn streets following ",
+        "true": "World",
+        "lstm:mean": "Business",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "King Singh ... at last! The No. 1 golfer in the world is on his way to Glen Abbey for this week #39;s Canadian Open. No, Tiger Woods hasn #39;t changed his plans.",
+        "true": "Sports",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Sports"
+      },
+      {
+        "text": "Service Sector Hit By High Oil Costs Confidence in service firms has been hit by rising oil prices and interest rates but manufacturers have seen the best rate of orders for nine years, two surveys show.",
+        "true": "Business",
+        "lstm:mean": "World",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Pedro, GM welcome challenge that awaits The Boston Red Sox could offer Pedro Martinez the still-dizzying celebration of a city that he helped to a historic World Series championship.",
+        "true": "Sports",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Sports"
+      },
+      {
+        "text": "AMD Launches Low-Cost Web Device Advanced Micro Devices is launching a low-cost Internet access device dubbed  quot;PIC, quot; or personal Internet communicator, targeted at first-time computer users in the developing world.",
+        "true": "Sci/Tech",
+        "lstm:mean": "Sports",
+        "transformer:mean": "Sci/Tech"
+      }
+    ],
+    "both_wrong": [
+      {
+        "text": "HP to tempt holiday shoppers with sights and sounds The computer-hardware giant, best known for products such as PCs and printers, on Friday laid out its plan to become a brand-name in consumer electronics products such as flat-screen TVs, music players and the devices that move content between them",
+        "true": "Business",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "U.N.: N.Korea Sends Positive Message on Nuke Talks  SEOUL (Reuters) - North Korea gave a visiting U.N. official  a \"very positive message\" about resuming stalled six-way talks  on its nuclear programs, the South Korean Unification Ministry  said Wednesday.",
+        "true": "World",
+        "lstm:mean": "Business",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Earthquake 'redraws the map' The devastating earthquake that struck the Indian Ocean probably caused some islands to move by several metres.",
+        "true": "Sci/Tech",
+        "lstm:mean": "World",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "Storage, servers bruise HP earnings update Earnings per share rise compared with a year ago, but company misses analysts' expectations by a long shot.",
+        "true": "Sci/Tech",
+        "lstm:mean": "World",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Med school move delayed to 2007 The MSU College of Human Medicine won #39;t be relocated to Grand Rapids until at least 2007, and could cost only half as much as university officials originally estimated.",
+        "true": "Business",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Sports"
+      },
+      {
+        "text": "Product Previews palmOneUpgrades Treo With Faster Chip, Better Display\\With more than 600,000 units shipped, the Treo 600 is one of the big smartphone success stories. Last week, palmOne introduced the follow-on Treo 650 with a higher resolution 320-by-320-pixel TFT screen, which the company claims ",
+        "true": "Business",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Brits to lose 12 current of IT jobs by 2010 New report on offshoring's implications from the British Computer Society.",
+        "true": "Sci/Tech",
+        "lstm:mean": "World",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "First drug cases at Paralympics Athens - Two weightlifters from Azerbaidjan have been banned from competitions for life after testing positive for drugs, in the first two doping cases of the Athens Paralympics, officials said here on Wednesday.",
+        "true": "Sports",
+        "lstm:mean": "World",
+        "transformer:mean": "Business"
+      }
+    ]
+  }
+}

@@ -1,0 +1,384 @@
+{
+  "name": "transformer",
+  "arch": "transformer",
+  "embedding": "random",
+  "embedding_trainable": true,
+  "embedding_changed_during_training": true,
+  "params": {
+    "total": 11435285,
+    "trainable": 11435285,
+    "embedding": 2891300,
+    "output_layer": 7430641,
+    "core": 1113344,
+    "size_mb_fp32": 45.74
+  },
+  "config": {
+    "SEQ_LEN": 128,
+    "BATCH_SIZE": 64,
+    "EMB_DIM": 100,
+    "HIDDEN": 256,
+    "DROPOUT": 0.3,
+    "LR": 0.001,
+    "WEIGHT_DECAY": 0.01,
+    "WARMUP_STEPS": 300,
+    "GRAD_CLIP": 1.0,
+    "SEED": 7,
+    "epochs": 20
+  },
+  "best_epoch": 20,
+  "valid_ce": 5.228654797321189,
+  "valid_ppl": 186.5416982720824,
+  "test_ce": 5.144082137107181,
+  "test_ppl": 171.4140778218206,
+  "test_targets": 244101,
+  "train_seconds": 123.0,
+  "seconds_per_epoch": 6.15,
+  "inference": {
+    "workload": "score all test targets once (batch 64, window 128)",
+    "seconds_median": 0.223,
+    "seconds_all": [
+      0.223,
+      0.2209,
+      0.2238
+    ],
+    "tokens": 244101,
+    "tokens_per_second": 1094587.5
+  },
+  "generation_seconds": 0.317,
+  "history": [
+    {
+      "epoch": 1,
+      "train_ce": 7.736159059949037,
+      "valid_ce": 6.394060703832056,
+      "train_ppl": 2289.6610212789683,
+      "valid_ppl": 598.2810960744519,
+      "epoch_seconds": 6.2,
+      "lr_end": 0.00085,
+      "grad_norm_mean": 0.5100653734732801,
+      "grad_norm_max": 1.5281490087509155,
+      "step_loss_std": 0.11867078803628597,
+      "clipped_frac": 0.14960629921259844
+    },
+    {
+      "epoch": 2,
+      "train_ce": 6.461979195088576,
+      "valid_ce": 5.999142017445434,
+      "train_ppl": 640.3271355693927,
+      "valid_ppl": 403.0828070722897,
+      "epoch_seconds": 6.16,
+      "lr_end": 0.0009958016689451123,
+      "grad_norm_mean": 0.2604402378788145,
+      "grad_norm_max": 0.3925507664680481,
+      "step_loss_std": 0.0651876854944859,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 3,
+      "train_ce": 6.108327815717839,
+      "valid_ce": 5.7604432143707305,
+      "train_ppl": 449.5862951142888,
+      "valid_ppl": 317.48901343215044,
+      "epoch_seconds": 6.18,
+      "lr_end": 0.0009794140436399368,
+      "grad_norm_mean": 0.25937396733779605,
+      "grad_norm_max": 0.4137588441371918,
+      "step_loss_std": 0.05368289422858643,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 4,
+      "train_ce": 5.870227752683371,
+      "valid_ce": 5.612891917778697,
+      "train_ppl": 354.3296706119751,
+      "valid_ppl": 273.9352919629832,
+      "epoch_seconds": 6.16,
+      "lr_end": 0.0009510871199777161,
+      "grad_norm_mean": 0.2687415733464121,
+      "grad_norm_max": 0.42655327916145325,
+      "step_loss_std": 0.05039335161463228,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 5,
+      "train_ce": 5.692324130488937,
+      "valid_ce": 5.515640482649899,
+      "train_ppl": 296.58211579206954,
+      "valid_ppl": 248.54911767621206,
+      "epoch_seconds": 6.23,
+      "lr_end": 0.0009116084911872929,
+      "grad_norm_mean": 0.28325554317846074,
+      "grad_norm_max": 0.4362931549549103,
+      "step_loss_std": 0.05120494439998654,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 6,
+      "train_ce": 5.554508258362355,
+      "valid_ce": 5.44426489786615,
+      "train_ppl": 258.3998672997239,
+      "valid_ppl": 231.42709461699116,
+      "epoch_seconds": 6.05,
+      "lr_end": 0.0008620758091383179,
+      "grad_norm_mean": 0.290877979923421,
+      "grad_norm_max": 0.4555038511753082,
+      "step_loss_std": 0.0488081840952443,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 7,
+      "train_ce": 5.44648301713769,
+      "valid_ce": 5.392755304292661,
+      "train_ppl": 231.9409972534862,
+      "valid_ppl": 219.808190411222,
+      "epoch_seconds": 6.04,
+      "lr_end": 0.0008038662655602338,
+      "grad_norm_mean": 0.3009539379144278,
+      "grad_norm_max": 0.4716617465019226,
+      "step_loss_std": 0.05674908416687891,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 8,
+      "train_ce": 5.355475389727633,
+      "valid_ce": 5.353883769011791,
+      "train_ppl": 211.7646231542944,
+      "valid_ppl": 211.42784227800536,
+      "epoch_seconds": 6.03,
+      "lr_end": 0.0007385983010194346,
+      "grad_norm_mean": 0.30842367870601145,
+      "grad_norm_max": 0.4992840588092804,
+      "step_loss_std": 0.0517064930882994,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 9,
+      "train_ce": 5.278574618483584,
+      "valid_ce": 5.323247125697956,
+      "train_ppl": 196.0901727499067,
+      "valid_ppl": 205.04862080960837,
+      "epoch_seconds": 6.04,
+      "lr_end": 0.0006680866062866371,
+      "grad_norm_mean": 0.31754155257555444,
+      "grad_norm_max": 0.5062947869300842,
+      "step_loss_std": 0.05304058309410852,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 10,
+      "train_ce": 5.212537312188815,
+      "valid_ce": 5.296545774765884,
+      "train_ppl": 183.55921485354943,
+      "valid_ppl": 199.64599531205562,
+      "epoch_seconds": 6.4,
+      "lr_end": 0.0005942916672228525,
+      "grad_norm_mean": 0.32571770661459193,
+      "grad_norm_max": 0.530449390411377,
+      "step_loss_std": 0.047751050434979854,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 11,
+      "train_ce": 5.155564726907744,
+      "valid_ce": 5.282538219666067,
+      "train_ppl": 173.39369920260793,
+      "valid_ppl": 196.8689383290343,
+      "epoch_seconds": 6.14,
+      "lr_end": 0.0005192652560227072,
+      "grad_norm_mean": 0.33329172080426706,
+      "grad_norm_max": 0.5271657109260559,
+      "step_loss_std": 0.05452250649828795,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 12,
+      "train_ce": 5.107509334723819,
+      "valid_ce": 5.270770087686507,
+      "train_ppl": 165.25823890805958,
+      "valid_ppl": 194.56573744667264,
+      "epoch_seconds": 6.16,
+      "lr_end": 0.00044509338436011836,
+      "grad_norm_mean": 0.3393612617817451,
+      "grad_norm_max": 0.5524272322654724,
+      "step_loss_std": 0.050650504841602,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 13,
+      "train_ce": 5.065296266488592,
+      "valid_ce": 5.256409176085414,
+      "train_ppl": 158.4273718426321,
+      "valid_ppl": 191.7915636009441,
+      "epoch_seconds": 6.14,
+      "lr_end": 0.00037383830454983005,
+      "grad_norm_mean": 0.34447463572494624,
+      "grad_norm_max": 0.5491248965263367,
+      "step_loss_std": 0.05449490226153013,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 14,
+      "train_ce": 5.029938726909305,
+      "valid_ce": 5.2497804081771795,
+      "train_ppl": 152.92364230433688,
+      "valid_ppl": 190.52442625864168,
+      "epoch_seconds": 6.15,
+      "lr_end": 0.0003074811713069947,
+      "grad_norm_mean": 0.35017120732566503,
+      "grad_norm_max": 0.5375523567199707,
+      "step_loss_std": 0.05235120278369689,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 15,
+      "train_ce": 4.99974002215007,
+      "valid_ce": 5.2418920025676465,
+      "train_ppl": 148.37457998364732,
+      "valid_ppl": 189.02740462562898,
+      "epoch_seconds": 6.15,
+      "lr_end": 0.0002478669583199181,
+      "grad_norm_mean": 0.35382849588168885,
+      "grad_norm_max": 0.5603593587875366,
+      "step_loss_std": 0.05026698350298571,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 16,
+      "train_ce": 4.976555750985182,
+      "valid_ce": 5.237705096812514,
+      "train_ppl": 144.97419353860076,
+      "valid_ppl": 188.23761922959042,
+      "epoch_seconds": 6.16,
+      "lr_end": 0.0001966531611589353,
+      "grad_norm_mean": 0.35707787101663,
+      "grad_norm_max": 0.562393307685852,
+      "step_loss_std": 0.05084989404693431,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 17,
+      "train_ce": 4.956256928451747,
+      "valid_ce": 5.235308427747104,
+      "train_ppl": 142.06105478266457,
+      "valid_ppl": 187.78701613956937,
+      "epoch_seconds": 6.15,
+      "lr_end": 0.00015526371277025197,
+      "grad_norm_mean": 0.36018263824342744,
+      "grad_norm_max": 0.5641388297080994,
+      "step_loss_std": 0.0562831417939247,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 18,
+      "train_ce": 4.9391113619886635,
+      "valid_ce": 5.2333948895808104,
+      "train_ppl": 139.64609957375825,
+      "valid_ppl": 187.42802210099092,
+      "epoch_seconds": 6.16,
+      "lr_end": 0.00012484939287443146,
+      "grad_norm_mean": 0.363006012998228,
+      "grad_norm_max": 0.5797968506813049,
+      "step_loss_std": 0.052637140712407354,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 19,
+      "train_ce": 4.926961239450925,
+      "valid_ce": 5.229752783518646,
+      "train_ppl": 137.95964839314811,
+      "valid_ppl": 186.74663096808266,
+      "epoch_seconds": 6.16,
+      "lr_end": 0.00010625583203465884,
+      "grad_norm_mean": 0.36457723144471177,
+      "grad_norm_max": 0.5748337507247925,
+      "step_loss_std": 0.05020925498712725,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 20,
+      "train_ce": 4.917447937076829,
+      "valid_ce": 5.228654797321189,
+      "train_ppl": 136.65341966841893,
+      "valid_ppl": 186.5416982720824,
+      "epoch_seconds": 6.15,
+      "lr_end": 0.0001,
+      "grad_norm_mean": 0.3658651781129086,
+      "grad_norm_max": 0.5963186621665955,
+      "step_loss_std": 0.04913463813975355,
+      "clipped_frac": 0.0
+    }
+  ],
+  "samples": [
+    {
+      "prompt": "the city is located in",
+      "continuation": "the western town of the city and north of the river . this is listed in the state of newark . the highway of md 194 road , it consists of sr island to the south west of the north"
+    },
+    {
+      "prompt": "in 1995 , the band released",
+      "continuation": "on november 25 when the album did not be released on august 3 . <eos> = = production = = <eos> credits and certifications = = <eos> in june 2005 , the album debuted by a recording album . the"
+    },
+    {
+      "prompt": "the game received",
+      "continuation": "the most memorable awards , who had been nominated on the screen and its previous year . <eos> his parents was featured in the series of the video game for the show 's most memorable awards in the world records"
+    },
+    {
+      "prompt": "he was born in",
+      "continuation": "the first three @-@ year – 0 victory over the 2005 year , he was appointed the phillies against bolton wanderers . he took his first appearance in the first round in the fourth – 5 – 0 lead win"
+    },
+    {
+      "prompt": "during the war , the",
+      "continuation": "germans was an hour of the american naval vessel at the battle of her own and one of her own class in the country . she was commissioned in the british ship , she was completed by the austro @-@"
+    }
+  ],
+  "greedy": [
+    {
+      "prompt": "the city is located in",
+      "continuation": "the city of the city of the city of the city of the city of the city of haifa . the haifa is the city of haifa , the city of haifa , and the city of haifa , haifa"
+    },
+    {
+      "prompt": "in 1995 , the band released",
+      "continuation": "on the billboard hot 100 chart . the album debuted on the billboard hot 100 chart . the album peaked on the billboard hot 100 chart , the album peaked on the billboard hot 100 chart . the album peaked"
+    },
+    {
+      "prompt": "the game received",
+      "continuation": "the first game . the game was released in the game , the game 's game , and the game was released in the game , and the game 's game , and the game 's game , and the"
+    },
+    {
+      "prompt": "he was born in",
+      "continuation": "the first round of the season . he was a second season in the season , but he was a first season in the season . he was a first season in the season , he was named in the"
+    },
+    {
+      "prompt": "during the war , the",
+      "continuation": "war of the war , the war of the war , the war of the war . the war was the first army of the war , and the war of the war , the war of the war ,"
+    }
+  ],
+  "sample_repetition": {
+    "distinct_1": 0.705,
+    "distinct_2": 0.918,
+    "repeated_trigram_rate": 0.016
+  },
+  "greedy_repetition": {
+    "distinct_1": 0.26,
+    "distinct_2": 0.4,
+    "repeated_trigram_rate": 0.505
+  },
+  "embedding_coverage": null,
+  "hardware": {
+    "device": "cuda",
+    "torch": "2.11.0+cu128",
+    "python": "3.12.10",
+    "os": "Windows 11",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "cpu_count": 16,
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpu_mem_gb": 17.1
+  },
+  "corpus": {
+    "vocab_size": 28913,
+    "train_tokens": 2075677,
+    "train_unk_rate": 0.02631671498022091,
+    "valid_tokens": 216347,
+    "valid_unk_rate": 0.05416298816253519,
+    "test_tokens": 244102,
+    "test_unk_rate": 0.062342791128298825
+  }
+}

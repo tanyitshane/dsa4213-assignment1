@@ -1,0 +1,384 @@
+{
+  "name": "transformer",
+  "arch": "transformer",
+  "embedding": "random",
+  "embedding_trainable": true,
+  "embedding_changed_during_training": true,
+  "params": {
+    "total": 11435285,
+    "trainable": 11435285,
+    "embedding": 2891300,
+    "output_layer": 7430641,
+    "core": 1113344,
+    "size_mb_fp32": 45.74
+  },
+  "config": {
+    "SEQ_LEN": 128,
+    "BATCH_SIZE": 64,
+    "EMB_DIM": 100,
+    "HIDDEN": 256,
+    "DROPOUT": 0.3,
+    "LR": 0.001,
+    "WEIGHT_DECAY": 0.01,
+    "WARMUP_STEPS": 300,
+    "GRAD_CLIP": 1.0,
+    "SEED": 42,
+    "epochs": 20
+  },
+  "best_epoch": 19,
+  "valid_ce": 5.23791758376917,
+  "valid_ppl": 188.2776215182606,
+  "test_ce": 5.151235538132781,
+  "test_ppl": 172.64466766568583,
+  "test_targets": 244101,
+  "train_seconds": 124.96,
+  "seconds_per_epoch": 6.25,
+  "inference": {
+    "workload": "score all test targets once (batch 64, window 128)",
+    "seconds_median": 0.2454,
+    "seconds_all": [
+      0.2454,
+      0.2482,
+      0.2427
+    ],
+    "tokens": 244101,
+    "tokens_per_second": 994543.3
+  },
+  "generation_seconds": 0.413,
+  "history": [
+    {
+      "epoch": 1,
+      "train_ce": 7.739177999707091,
+      "valid_ce": 6.408598523892284,
+      "train_ppl": 2296.583814458499,
+      "valid_ppl": 607.0423293053549,
+      "epoch_seconds": 6.26,
+      "lr_end": 0.00085,
+      "grad_norm_mean": 0.4966263508233498,
+      "grad_norm_max": 1.5206743478775024,
+      "step_loss_std": 0.11844229320945018,
+      "clipped_frac": 0.14566929133858267
+    },
+    {
+      "epoch": 2,
+      "train_ce": 6.448941296671346,
+      "valid_ce": 5.9856872696831696,
+      "train_ppl": 632.032803246755,
+      "valid_ppl": 397.69575158032194,
+      "epoch_seconds": 6.22,
+      "lr_end": 0.0009958016689451123,
+      "grad_norm_mean": 0.26274723694549773,
+      "grad_norm_max": 0.38342583179473877,
+      "step_loss_std": 0.06747031506202927,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 3,
+      "train_ce": 6.093309467528875,
+      "valid_ce": 5.755121290447362,
+      "train_ppl": 442.8847009922584,
+      "valid_ppl": 315.8038491914922,
+      "epoch_seconds": 6.23,
+      "lr_end": 0.0009794140436399368,
+      "grad_norm_mean": 0.2618876884537419,
+      "grad_norm_max": 0.4070435166358948,
+      "step_loss_std": 0.05530550886307521,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 4,
+      "train_ce": 5.856064360458671,
+      "valid_ce": 5.619171563216445,
+      "train_ppl": 349.3465328792296,
+      "valid_ppl": 275.66092096785735,
+      "epoch_seconds": 6.25,
+      "lr_end": 0.0009510871199777161,
+      "grad_norm_mean": 0.2742263521031132,
+      "grad_norm_max": 0.433639258146286,
+      "step_loss_std": 0.04914923430285978,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 5,
+      "train_ce": 5.678819301356878,
+      "valid_ce": 5.507844034050202,
+      "train_ppl": 292.6037490407696,
+      "valid_ppl": 246.61885164323363,
+      "epoch_seconds": 6.24,
+      "lr_end": 0.0009116084911872929,
+      "grad_norm_mean": 0.28433909167454935,
+      "grad_norm_max": 0.4331299066543579,
+      "step_loss_std": 0.049573198998471985,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 6,
+      "train_ce": 5.542654672773282,
+      "valid_ce": 5.437403177014481,
+      "train_ppl": 255.35498439884012,
+      "valid_ppl": 229.84454222190018,
+      "epoch_seconds": 6.26,
+      "lr_end": 0.0008620758091383179,
+      "grad_norm_mean": 0.2945316222708995,
+      "grad_norm_max": 0.44984376430511475,
+      "step_loss_std": 0.050661872307578945,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 7,
+      "train_ce": 5.433835045744451,
+      "valid_ce": 5.390478334617927,
+      "train_ppl": 229.02588812475602,
+      "valid_ppl": 219.30826320293718,
+      "epoch_seconds": 6.24,
+      "lr_end": 0.0008038662655602338,
+      "grad_norm_mean": 0.3021673980190998,
+      "grad_norm_max": 0.4689064025878906,
+      "step_loss_std": 0.04901870741802029,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 8,
+      "train_ce": 5.342591366745618,
+      "valid_ce": 5.353113942769915,
+      "train_ppl": 209.05374389806795,
+      "valid_ppl": 211.26514221018255,
+      "epoch_seconds": 6.26,
+      "lr_end": 0.0007385983010194346,
+      "grad_norm_mean": 0.3125033752890084,
+      "grad_norm_max": 0.4812246561050415,
+      "step_loss_std": 0.05457023061328873,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 9,
+      "train_ce": 5.264977988960362,
+      "valid_ce": 5.32716919237587,
+      "train_ppl": 193.44205087991176,
+      "valid_ppl": 205.85441432765768,
+      "epoch_seconds": 6.24,
+      "lr_end": 0.0006680866062866371,
+      "grad_norm_mean": 0.3207930542352631,
+      "grad_norm_max": 0.4970054626464844,
+      "step_loss_std": 0.053500592277354805,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 10,
+      "train_ce": 5.19928500243396,
+      "valid_ce": 5.293025968096244,
+      "train_ppl": 181.14267898751416,
+      "valid_ppl": 198.94451526748085,
+      "epoch_seconds": 6.24,
+      "lr_end": 0.0005942916672228525,
+      "grad_norm_mean": 0.32890685782657836,
+      "grad_norm_max": 0.524915337562561,
+      "step_loss_std": 0.0490415729217511,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 11,
+      "train_ce": 5.143276572254815,
+      "valid_ce": 5.283522834949571,
+      "train_ppl": 171.2760482688693,
+      "valid_ppl": 197.06287395488306,
+      "epoch_seconds": 6.24,
+      "lr_end": 0.0005192652560227072,
+      "grad_norm_mean": 0.3369233750217543,
+      "grad_norm_max": 0.532880961894989,
+      "step_loss_std": 0.05560691564337162,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 12,
+      "train_ce": 5.094733406184066,
+      "valid_ce": 5.267799675851991,
+      "train_ppl": 163.16034128779188,
+      "valid_ppl": 193.98865458876193,
+      "epoch_seconds": 6.26,
+      "lr_end": 0.00044509338436011836,
+      "grad_norm_mean": 0.3422787277482626,
+      "grad_norm_max": 0.52687007188797,
+      "step_loss_std": 0.0537511979269451,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 13,
+      "train_ce": 5.053245933128485,
+      "valid_ce": 5.259905393154947,
+      "train_ppl": 156.52972579542435,
+      "valid_ppl": 192.46328209199416,
+      "epoch_seconds": 6.24,
+      "lr_end": 0.00037383830454983005,
+      "grad_norm_mean": 0.3478690419844755,
+      "grad_norm_max": 0.5441277623176575,
+      "step_loss_std": 0.050190026979149434,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 14,
+      "train_ce": 5.018285254452356,
+      "valid_ce": 5.252352785006425,
+      "train_ppl": 151.15189440911573,
+      "valid_ppl": 191.01515778075068,
+      "epoch_seconds": 6.25,
+      "lr_end": 0.0003074811713069947,
+      "grad_norm_mean": 0.35245974573094074,
+      "grad_norm_max": 0.5472666025161743,
+      "step_loss_std": 0.042577883100157546,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 15,
+      "train_ce": 4.987491310800956,
+      "valid_ce": 5.24621176119503,
+      "train_ppl": 146.56826766448668,
+      "valid_ppl": 189.84572358525836,
+      "epoch_seconds": 6.26,
+      "lr_end": 0.0002478669583199181,
+      "grad_norm_mean": 0.3573039117760546,
+      "grad_norm_max": 0.566888689994812,
+      "step_loss_std": 0.04554136424533353,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 16,
+      "train_ce": 4.963577953213645,
+      "valid_ce": 5.245957827681122,
+      "train_ppl": 143.1049036418076,
+      "valid_ppl": 189.79752151388752,
+      "epoch_seconds": 6.26,
+      "lr_end": 0.0001966531611589353,
+      "grad_norm_mean": 0.3609540843822825,
+      "grad_norm_max": 0.5662373304367065,
+      "step_loss_std": 0.05153359991986758,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 17,
+      "train_ce": 4.94412393304052,
+      "valid_ce": 5.2382421055277195,
+      "train_ppl": 140.34784286972672,
+      "valid_ppl": 188.3387316183334,
+      "epoch_seconds": 6.24,
+      "lr_end": 0.00015526371277025197,
+      "grad_norm_mean": 0.36313708983068393,
+      "grad_norm_max": 0.5836700201034546,
+      "step_loss_std": 0.049938605519823674,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 18,
+      "train_ce": 4.927574975294765,
+      "valid_ce": 5.239598629409025,
+      "train_ppl": 138.0443451624335,
+      "valid_ppl": 188.59439097035232,
+      "epoch_seconds": 6.25,
+      "lr_end": 0.00012484939287443146,
+      "grad_norm_mean": 0.36571733876476137,
+      "grad_norm_max": 0.5709020495414734,
+      "step_loss_std": 0.05215087121548847,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 19,
+      "train_ce": 4.9149150959034,
+      "valid_ce": 5.23791758376917,
+      "train_ppl": 136.30773622602558,
+      "valid_ppl": 188.2776215182606,
+      "epoch_seconds": 6.26,
+      "lr_end": 0.00010625583203465884,
+      "grad_norm_mean": 0.36718220985311223,
+      "grad_norm_max": 0.585909903049469,
+      "step_loss_std": 0.051869857177493484,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 20,
+      "train_ce": 4.905977970051131,
+      "valid_ce": 5.2385161348892515,
+      "train_ppl": 135.09496425283461,
+      "valid_ppl": 188.39034903273108,
+      "epoch_seconds": 6.26,
+      "lr_end": 0.0001,
+      "grad_norm_mean": 0.3696717897972723,
+      "grad_norm_max": 0.5805147290229797,
+      "step_loss_std": 0.05326664139752788,
+      "clipped_frac": 0.0
+    }
+  ],
+  "samples": [
+    {
+      "prompt": "the city is located in",
+      "continuation": "the east of the city of the national forest district for the university of athletics and the florida road , the city of texas street city , and city ( colorado . md 194 , the road was located in"
+    },
+    {
+      "prompt": "in 1995 , the band released",
+      "continuation": "on june 5 , 2010 , 2015 . the album is the song 's album in 2013 <eos> = = = chart = = <eos> the album 's \" was released in the united kingdom of the week , and"
+    },
+    {
+      "prompt": "the game received",
+      "continuation": "the highest season . <eos> boise state was also the first highest @-@ team season , as a coach from the ball pitched to win the season . the final score was the first run on the two . somerset"
+    },
+    {
+      "prompt": "he was born in",
+      "continuation": "the united states . he was a total of the atlantic 's most of the united states in december 2011 . <eos> = = = = = = <eos> = = = = = = <eos> the first entry of"
+    },
+    {
+      "prompt": "during the war , the",
+      "continuation": "national museum , as a result of independence , but many of the historic district . for the civil war , it was created by the galveston , and the town of galveston , was held by the national anthem"
+    }
+  ],
+  "greedy": [
+    {
+      "prompt": "the city is located in",
+      "continuation": "the city of the city of the city . the city was built in the city of the city of the city of the city of the city of the city . the city was built in the city of"
+    },
+    {
+      "prompt": "in 1995 , the band released",
+      "continuation": "on the billboard hot 100 chart . the album peaked on the billboard hot 100 chart chart . the album peaked on the billboard hot 100 chart chart chart , peaking on the billboard hot 100 chart chart chart ."
+    },
+    {
+      "prompt": "the game received",
+      "continuation": "the game . the game was released in the game , and the game 's game , the game was released in the game , and the game 's game , and the game 's game , and the game"
+    },
+    {
+      "prompt": "he was born in",
+      "continuation": "the united states . he was a member of the first time in the season , and was a result of the season . he was appointed manager in the season , and he was appointed manager . he was"
+    },
+    {
+      "prompt": "during the war , the",
+      "continuation": "united states , the first time of the war . <eos> = = = = = = <eos> the war of the war , the croatian war , the croatian war was the first part of the croatian war ."
+    }
+  ],
+  "sample_repetition": {
+    "distinct_1": 0.605,
+    "distinct_2": 0.872,
+    "repeated_trigram_rate": 0.058
+  },
+  "greedy_repetition": {
+    "distinct_1": 0.295,
+    "distinct_2": 0.426,
+    "repeated_trigram_rate": 0.442
+  },
+  "embedding_coverage": null,
+  "hardware": {
+    "device": "cuda",
+    "torch": "2.11.0+cu128",
+    "python": "3.12.10",
+    "os": "Windows 11",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "cpu_count": 16,
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpu_mem_gb": 17.1
+  },
+  "corpus": {
+    "vocab_size": 28913,
+    "train_tokens": 2075677,
+    "train_unk_rate": 0.02631671498022091,
+    "valid_tokens": 216347,
+    "valid_unk_rate": 0.05416298816253519,
+    "test_tokens": 244102,
+    "test_unk_rate": 0.062342791128298825
+  }
+}

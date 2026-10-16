@@ -1,0 +1,942 @@
+{
+  "task": "AG News 4-way topic classification",
+  "labels": [
+    "World",
+    "Sports",
+    "Business",
+    "Sci/Tech"
+  ],
+  "n_train": 10000,
+  "n_val": 2000,
+  "n_test": 7600,
+  "train_text_stats": {
+    "token_unk_rate": 0.0702,
+    "mean_len": 44.4,
+    "truncated_frac": 0.0015
+  },
+  "test_text_stats": {
+    "token_unk_rate": 0.0713,
+    "mean_len": 44.0,
+    "truncated_frac": 0.0024
+  },
+  "majority_baseline_acc": 0.25,
+  "results": {
+    "rnn:mean": {
+      "C": 0.1,
+      "val_macro_f1": 0.6847,
+      "test_accuracy": 0.6699,
+      "test_macro_f1": 0.6688,
+      "per_class_f1": [
+        0.675,
+        0.7914,
+        0.5795,
+        0.6292
+      ],
+      "confusion": [
+        [
+          1303,
+          138,
+          250,
+          209
+        ],
+        [
+          146,
+          1521,
+          107,
+          126
+        ],
+        [
+          303,
+          145,
+          1062,
+          390
+        ],
+        [
+          209,
+          140,
+          346,
+          1205
+        ]
+      ],
+      "model": "rnn",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 163.74473018053922
+    },
+    "rnn:last": {
+      "C": 0.01,
+      "val_macro_f1": 0.5605,
+      "test_accuracy": 0.5709,
+      "test_macro_f1": 0.5651,
+      "per_class_f1": [
+        0.5899,
+        0.724,
+        0.4078,
+        0.5386
+      ],
+      "confusion": [
+        [
+          1196,
+          153,
+          279,
+          272
+        ],
+        [
+          170,
+          1419,
+          143,
+          168
+        ],
+        [
+          487,
+          259,
+          691,
+          463
+        ],
+        [
+          302,
+          189,
+          376,
+          1033
+        ]
+      ],
+      "model": "rnn",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 163.74473018053922
+    },
+    "rnn:emb": {
+      "C": 0.1,
+      "val_macro_f1": 0.6594,
+      "test_accuracy": 0.6593,
+      "test_macro_f1": 0.6575,
+      "per_class_f1": [
+        0.6609,
+        0.7846,
+        0.5511,
+        0.6332
+      ],
+      "confusion": [
+        [
+          1269,
+          157,
+          271,
+          203
+        ],
+        [
+          130,
+          1528,
+          119,
+          123
+        ],
+        [
+          336,
+          173,
+          1003,
+          388
+        ],
+        [
+          205,
+          137,
+          347,
+          1211
+        ]
+      ],
+      "model": "rnn",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 163.74473018053922
+    },
+    "lstm:mean": {
+      "C": 0.1,
+      "val_macro_f1": 0.6412,
+      "test_accuracy": 0.6363,
+      "test_macro_f1": 0.6349,
+      "per_class_f1": [
+        0.6492,
+        0.7511,
+        0.5619,
+        0.5773
+      ],
+      "confusion": [
+        [
+          1241,
+          174,
+          237,
+          248
+        ],
+        [
+          175,
+          1465,
+          114,
+          146
+        ],
+        [
+          274,
+          169,
+          1023,
+          434
+        ],
+        [
+          233,
+          193,
+          367,
+          1107
+        ]
+      ],
+      "model": "lstm",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 161.5315971112687
+    },
+    "lstm:last": {
+      "C": 0.01,
+      "val_macro_f1": 0.5599,
+      "test_accuracy": 0.5655,
+      "test_macro_f1": 0.5639,
+      "per_class_f1": [
+        0.57,
+        0.7049,
+        0.4469,
+        0.534
+      ],
+      "confusion": [
+        [
+          1109,
+          189,
+          299,
+          303
+        ],
+        [
+          208,
+          1345,
+          186,
+          161
+        ],
+        [
+          390,
+          213,
+          803,
+          494
+        ],
+        [
+          284,
+          169,
+          406,
+          1041
+        ]
+      ],
+      "model": "lstm",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 161.5315971112687
+    },
+    "lstm:emb": {
+      "C": 0.01,
+      "val_macro_f1": 0.6118,
+      "test_accuracy": 0.612,
+      "test_macro_f1": 0.6102,
+      "per_class_f1": [
+        0.6032,
+        0.7137,
+        0.5266,
+        0.5972
+      ],
+      "confusion": [
+        [
+          1150,
+          228,
+          273,
+          249
+        ],
+        [
+          197,
+          1405,
+          152,
+          146
+        ],
+        [
+          340,
+          225,
+          959,
+          376
+        ],
+        [
+          226,
+          179,
+          358,
+          1137
+        ]
+      ],
+      "model": "lstm",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 161.5315971112687
+    },
+    "transformer:mean": {
+      "C": 1.0,
+      "val_macro_f1": 0.7447,
+      "test_accuracy": 0.7413,
+      "test_macro_f1": 0.7405,
+      "per_class_f1": [
+        0.7562,
+        0.8542,
+        0.6576,
+        0.694
+      ],
+      "confusion": [
+        [
+          1452,
+          113,
+          184,
+          151
+        ],
+        [
+          100,
+          1643,
+          86,
+          71
+        ],
+        [
+          224,
+          104,
+          1229,
+          343
+        ],
+        [
+          164,
+          87,
+          339,
+          1310
+        ]
+      ],
+      "model": "transformer",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 157.98508915019565
+    },
+    "transformer:last": {
+      "C": 0.01,
+      "val_macro_f1": 0.689,
+      "test_accuracy": 0.6803,
+      "test_macro_f1": 0.6792,
+      "per_class_f1": [
+        0.6939,
+        0.8214,
+        0.5606,
+        0.6411
+      ],
+      "confusion": [
+        [
+          1340,
+          117,
+          267,
+          176
+        ],
+        [
+          125,
+          1568,
+          105,
+          102
+        ],
+        [
+          303,
+          138,
+          1034,
+          425
+        ],
+        [
+          194,
+          95,
+          383,
+          1228
+        ]
+      ],
+      "model": "transformer",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 157.98508915019565
+    },
+    "transformer:emb": {
+      "C": 1.0,
+      "val_macro_f1": 0.6886,
+      "test_accuracy": 0.6884,
+      "test_macro_f1": 0.6861,
+      "per_class_f1": [
+        0.7078,
+        0.8098,
+        0.5668,
+        0.6601
+      ],
+      "confusion": [
+        [
+          1372,
+          135,
+          234,
+          159
+        ],
+        [
+          124,
+          1573,
+          113,
+          90
+        ],
+        [
+          304,
+          153,
+          1020,
+          423
+        ],
+        [
+          177,
+          124,
+          332,
+          1267
+        ]
+      ],
+      "model": "transformer",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 157.98508915019565
+    },
+    "lstm_frozen_random:mean": {
+      "C": 0.1,
+      "val_macro_f1": 0.5741,
+      "test_accuracy": 0.5542,
+      "test_macro_f1": 0.5528,
+      "per_class_f1": [
+        0.5311,
+        0.6611,
+        0.4997,
+        0.5192
+      ],
+      "confusion": [
+        [
+          1008,
+          299,
+          270,
+          323
+        ],
+        [
+          274,
+          1299,
+          166,
+          161
+        ],
+        [
+          323,
+          202,
+          904,
+          471
+        ],
+        [
+          291,
+          230,
+          378,
+          1001
+        ]
+      ],
+      "model": "lstm_frozen_random",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 229.03840983735836
+    },
+    "lstm_frozen_random:last": {
+      "C": 0.01,
+      "val_macro_f1": 0.4675,
+      "test_accuracy": 0.4709,
+      "test_macro_f1": 0.4681,
+      "per_class_f1": [
+        0.4405,
+        0.5784,
+        0.3666,
+        0.487
+      ],
+      "confusion": [
+        [
+          835,
+          365,
+          324,
+          376
+        ],
+        [
+          356,
+          1118,
+          224,
+          202
+        ],
+        [
+          392,
+          287,
+          642,
+          579
+        ],
+        [
+          308,
+          196,
+          412,
+          984
+        ]
+      ],
+      "model": "lstm_frozen_random",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 229.03840983735836
+    },
+    "lstm_frozen_random:emb": {
+      "C": 0.1,
+      "val_macro_f1": 0.5263,
+      "test_accuracy": 0.5238,
+      "test_macro_f1": 0.5228,
+      "per_class_f1": [
+        0.5332,
+        0.5757,
+        0.5042,
+        0.4782
+      ],
+      "confusion": [
+        [
+          1028,
+          299,
+          274,
+          299
+        ],
+        [
+          329,
+          1137,
+          205,
+          229
+        ],
+        [
+          310,
+          273,
+          932,
+          385
+        ],
+        [
+          289,
+          341,
+          386,
+          884
+        ]
+      ],
+      "model": "lstm_frozen_random",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 229.03840983735836
+    },
+    "lstm_w2v:mean": {
+      "C": 0.1,
+      "val_macro_f1": 0.7512,
+      "test_accuracy": 0.7526,
+      "test_macro_f1": 0.7516,
+      "per_class_f1": [
+        0.7781,
+        0.869,
+        0.6643,
+        0.6951
+      ],
+      "confusion": [
+        [
+          1485,
+          115,
+          161,
+          139
+        ],
+        [
+          87,
+          1681,
+          60,
+          72
+        ],
+        [
+          211,
+          93,
+          1240,
+          356
+        ],
+        [
+          134,
+          80,
+          372,
+          1314
+        ]
+      ],
+      "model": "lstm_w2v",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 156.34426232685496
+    },
+    "lstm_w2v:last": {
+      "C": 0.1,
+      "val_macro_f1": 0.7214,
+      "test_accuracy": 0.7091,
+      "test_macro_f1": 0.7083,
+      "per_class_f1": [
+        0.7317,
+        0.8494,
+        0.5991,
+        0.6529
+      ],
+      "confusion": [
+        [
+          1403,
+          124,
+          220,
+          153
+        ],
+        [
+          105,
+          1630,
+          80,
+          85
+        ],
+        [
+          272,
+          103,
+          1127,
+          398
+        ],
+        [
+          155,
+          81,
+          435,
+          1229
+        ]
+      ],
+      "model": "lstm_w2v",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 156.34426232685496
+    },
+    "lstm_w2v:emb": {
+      "C": 0.1,
+      "val_macro_f1": 0.7831,
+      "test_accuracy": 0.7796,
+      "test_macro_f1": 0.7789,
+      "per_class_f1": [
+        0.7897,
+        0.8917,
+        0.7064,
+        0.7277
+      ],
+      "confusion": [
+        [
+          1521,
+          99,
+          151,
+          129
+        ],
+        [
+          73,
+          1712,
+          50,
+          65
+        ],
+        [
+          209,
+          66,
+          1320,
+          305
+        ],
+        [
+          149,
+          63,
+          316,
+          1372
+        ]
+      ],
+      "model": "lstm_w2v",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 156.34426232685496
+    },
+    "lstm_glove:mean": {
+      "C": 0.1,
+      "val_macro_f1": 0.8333,
+      "test_accuracy": 0.8292,
+      "test_macro_f1": 0.8288,
+      "per_class_f1": [
+        0.8478,
+        0.9256,
+        0.7542,
+        0.7878
+      ],
+      "confusion": [
+        [
+          1599,
+          70,
+          145,
+          86
+        ],
+        [
+          46,
+          1779,
+          35,
+          40
+        ],
+        [
+          136,
+          55,
+          1419,
+          290
+        ],
+        [
+          91,
+          40,
+          264,
+          1505
+        ]
+      ],
+      "model": "lstm_glove",
+      "pooling": "mean",
+      "dim": 256,
+      "lm_test_ppl": 155.90359188861964
+    },
+    "lstm_glove:last": {
+      "C": 0.01,
+      "val_macro_f1": 0.7869,
+      "test_accuracy": 0.7903,
+      "test_macro_f1": 0.7901,
+      "per_class_f1": [
+        0.8093,
+        0.9187,
+        0.6862,
+        0.7462
+      ],
+      "confusion": [
+        [
+          1511,
+          79,
+          207,
+          103
+        ],
+        [
+          47,
+          1763,
+          53,
+          37
+        ],
+        [
+          180,
+          55,
+          1302,
+          363
+        ],
+        [
+          96,
+          41,
+          333,
+          1430
+        ]
+      ],
+      "model": "lstm_glove",
+      "pooling": "last",
+      "dim": 256,
+      "lm_test_ppl": 155.90359188861964
+    },
+    "lstm_glove:emb": {
+      "C": 0.1,
+      "val_macro_f1": 0.8696,
+      "test_accuracy": 0.8711,
+      "test_macro_f1": 0.8707,
+      "per_class_f1": [
+        0.8747,
+        0.95,
+        0.8197,
+        0.8386
+      ],
+      "confusion": [
+        [
+          1668,
+          65,
+          108,
+          59
+        ],
+        [
+          42,
+          1824,
+          21,
+          13
+        ],
+        [
+          115,
+          26,
+          1562,
+          197
+        ],
+        [
+          89,
+          25,
+          220,
+          1566
+        ]
+      ],
+      "model": "lstm_glove",
+      "pooling": "emb",
+      "dim": 100,
+      "lm_test_ppl": 155.90359188861964
+    }
+  },
+  "errors": {
+    "compared": [
+      "lstm:mean",
+      "transformer:mean"
+    ],
+    "counts": {
+      "only_lstm:mean_right": 590,
+      "only_transformer:mean_right": 1388,
+      "both_wrong": 1376
+    },
+    "only_a_right": [
+      {
+        "text": "Global Warming May Spur Fiercer Hurricanes - Experts (Reuters) Reuters - As Hurricane Ivan and its powerful\\winds churned through the Gulf of Mexico, scientists told\\Congress on Wednesday that global warming could produce\\stronger and more destructive hurricanes in the future.",
+        "true": "Sci/Tech",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "Japanese rescuers grapple with rocks to retrieve girl from quake &lt;b&gt;...&lt;/b&gt; TOKYO - Rescuers grappled through mud and rocks for a second day Thursday in the hope of finding a three-year-old girl trapped in a crushed car since Japans killer earthquake last weekend.",
+        "true": "World",
+        "lstm:mean": "World",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Zurich abandons bid for 2014 Winter Olympics Zurich has decided to quit the bid for the 2014 Winter Olympics, according to a statement released bythe Swiss Olympic Association on Tuesday.",
+        "true": "Sports",
+        "lstm:mean": "Sports",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Black Market in British Treasure Sold on EBay (Reuters) Reuters - Pieces of Britain's past, including a\\second-century silver ring and a 500-year-old Tudor trade\\weight, are among artifacts being peddled daily on the Internet\\to the alarm of experts at the British Museum.",
+        "true": "World",
+        "lstm:mean": "World",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Avis blames IT for multimillion-dollar loss The car rental company takes a major hit because of problems with IT, including high costs associated with an ERP project.",
+        "true": "Sci/Tech",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Chirac, in Beijing, Signs Accords to Increase French Investment President Jacques Chirac of France declared Saturday that France was a natural trade partner for China and, during a flurry of air, rail and energy deals, he played down ",
+        "true": "World",
+        "lstm:mean": "World",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "'Miracle baby' a victim - judge A \"miracle baby\" was the victim of child traffickers motivated by financial greed, a judge rules.",
+        "true": "World",
+        "lstm:mean": "World",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Stocks Higher on Drop in Jobless Claims A sharp drop in initial unemployment claims and bullish forecasts from Nokia and Texas Instruments sent stocks higher in early trading Thursday.",
+        "true": "Business",
+        "lstm:mean": "Business",
+        "transformer:mean": "World"
+      }
+    ],
+    "only_b_right": [
+      {
+        "text": "Baseball Owners Set to Approve Expos Sale (AP) AP - The proposed move of the Montreal Expos to Washington is set to be approved when baseball owners meet Thursday in Chicago.",
+        "true": "Sports",
+        "lstm:mean": "World",
+        "transformer:mean": "Sports"
+      },
+      {
+        "text": "Women, and the future of IT &lt;strong&gt;Interview&lt;/strong&gt; Professor Wendy Hall talks to &lt;em&gt;The Reg&lt;/em&gt;",
+        "true": "Sci/Tech",
+        "lstm:mean": "Business",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "UN to begin second airlift of Vietnamese Montagnards (AFP) AFP - The second major airlift of Vietnamese Montagnards who fled to Cambodia's remote jungles after April anti-government protests will begin at the weekend.",
+        "true": "World",
+        "lstm:mean": "Business",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "Sony goes OLED with Japanese CLIE PEG-VZ90 Despite pulling out of the US and European markets, Sony #39;s CLIE line is still kicking in Japan, and is now kicking with an OLED display.",
+        "true": "Sci/Tech",
+        "lstm:mean": "Business",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Industrials lift stocks THE stock market opened higher today as industrials stocks mitigated the effects of a weaker resources sector.  quot;Commodity prices are generally weaker on renewed speculation of weaker demand in China, quot; Wilson HTM senior client adviser Angus Bligh said.",
+        "true": "Business",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "South Korea to Pick Country's First 2 Astronauts (Reuters) Reuters - South Korea will pick its first two\\astronauts next year for a space trip by 2007, the science\\ministry said Sunday, after Russia agreed to help the country's\\space program.",
+        "true": "Sci/Tech",
+        "lstm:mean": "Sports",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "U.S. Asks Laos to Check Massacre Report (AP) AP - The State Department said Monday it is taking seriously allegations that Laotian military forces may have massacred children of the country's Hmong ethnic minority.",
+        "true": "World",
+        "lstm:mean": "Business",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "Tech Firms Keep Riding Chinese Tiger Microsoft watched a software deal with China go bust less than two weeks into the contract. And Beijing is pushing its government IT officials to buy local. But China remains a vibrant market where tech firms have to stay in play. &lt;FONT face=\"verdana,MS Sans S",
+        "true": "Sci/Tech",
+        "lstm:mean": "Sports",
+        "transformer:mean": "Sci/Tech"
+      }
+    ],
+    "both_wrong": [
+      {
+        "text": "Tribe challenges American origins Some of the earliest settlers of America may have been from Australia, southern Asia, and the Pacific, not northern Asia, research suggests.",
+        "true": "Sci/Tech",
+        "lstm:mean": "World",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "SAP Gets \\$35 Million Post Office Pact SAP has landed a \\$35 million deal to help the US Postal Service overhaul its human resources systems. According to sources close to the deal, the agreement includes a \\$21 million consulting component, and ",
+        "true": "Sci/Tech",
+        "lstm:mean": "Business",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "A Greek tragedy for Fab Three PARIS: Greece #39;s shock Euro 2004 triumph in July has had unexpected consequences with three European Players of the Year calling time on their national sides.",
+        "true": "Sports",
+        "lstm:mean": "World",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Iran Says EU Nuclear Proposal Unacceptable  TEHRAN (Reuters) - Iran on Sunday turned down a European  Union proposal that it stop enriching uranium in return for  nuclear technology.",
+        "true": "World",
+        "lstm:mean": "Business",
+        "transformer:mean": "Sci/Tech"
+      },
+      {
+        "text": "Business: Bush Administration Washington Post business columnist Steven Pearlstein will be online to discuss his latest column, which looks at the Bush administration's plans for Social Security and health care.",
+        "true": "Business",
+        "lstm:mean": "World",
+        "transformer:mean": "World"
+      },
+      {
+        "text": "Four Infineon executives plead guilty Four Infineon executives pled guilty for price fixing computer memory chips and will face a prison sentence of four to six months along with \\$250,000 in fines, reported the US Department of Justice on Thursday.",
+        "true": "Sci/Tech",
+        "lstm:mean": "World",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Japanese Utility Plans IPO in October (AP) AP - Electric Power Development Co., a former state-run utility, said Friday it is planning an initial public offering on the Tokyo Stock Exchange in October, a deal that could be the country's biggest new stock listing in six years.",
+        "true": "World",
+        "lstm:mean": "Business",
+        "transformer:mean": "Business"
+      },
+      {
+        "text": "Legendary all-rounder Miller dies Keith Miller, arguably Australia's greatest  all-rounder in Test cricket, has died in Melbourne aged 84.",
+        "true": "World",
+        "lstm:mean": "Sci/Tech",
+        "transformer:mean": "Business"
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+data/
+results*/checkpoints/
+results_smoke*/
+venv/
+__pycache__/
+*.pyc
+.DS_Store

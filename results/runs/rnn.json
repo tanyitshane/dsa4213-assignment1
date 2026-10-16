@@ -1,0 +1,384 @@
+{
+  "name": "rnn",
+  "arch": "rnn",
+  "embedding": "random",
+  "embedding_trainable": true,
+  "embedding_changed_during_training": true,
+  "params": {
+    "total": 10545173,
+    "trainable": 10545173,
+    "embedding": 2891300,
+    "output_layer": 7430641,
+    "core": 223232,
+    "size_mb_fp32": 42.18
+  },
+  "config": {
+    "SEQ_LEN": 128,
+    "BATCH_SIZE": 64,
+    "EMB_DIM": 100,
+    "HIDDEN": 256,
+    "DROPOUT": 0.3,
+    "LR": 0.001,
+    "WEIGHT_DECAY": 0.01,
+    "WARMUP_STEPS": 300,
+    "GRAD_CLIP": 1.0,
+    "SEED": 42,
+    "epochs": 20
+  },
+  "best_epoch": 20,
+  "valid_ce": 5.284988748491999,
+  "valid_ppl": 197.3519629284753,
+  "test_ce": 5.206882121795896,
+  "test_ppl": 182.52408223991245,
+  "test_targets": 244101,
+  "train_seconds": 137.28,
+  "seconds_per_epoch": 6.86,
+  "inference": {
+    "workload": "score all test targets once (batch 64, window 128)",
+    "seconds_median": 0.3048,
+    "seconds_all": [
+      0.3048,
+      0.305,
+      0.2886
+    ],
+    "tokens": 244101,
+    "tokens_per_second": 800917.3
+  },
+  "generation_seconds": 0.179,
+  "history": [
+    {
+      "epoch": 1,
+      "train_ce": 7.756277984546481,
+      "valid_ce": 6.466148264816544,
+      "train_ppl": 2336.1930564148147,
+      "valid_ppl": 643.0022765962789,
+      "epoch_seconds": 21.25,
+      "lr_end": 0.00085,
+      "grad_norm_mean": 0.49334153444982887,
+      "grad_norm_max": 1.6361645460128784,
+      "step_loss_std": 0.09826612971348564,
+      "clipped_frac": 0.16141732283464566
+    },
+    {
+      "epoch": 2,
+      "train_ce": 6.439937061015699,
+      "valid_ce": 5.911526577363344,
+      "train_ppl": 626.3673756444209,
+      "valid_ppl": 369.26944372213177,
+      "epoch_seconds": 6.08,
+      "lr_end": 0.0009958016689451123,
+      "grad_norm_mean": 0.27327687698086417,
+      "grad_norm_max": 0.37475305795669556,
+      "step_loss_std": 0.07262853024838407,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 3,
+      "train_ce": 6.085694405332168,
+      "valid_ce": 5.717313210089394,
+      "train_ppl": 439.5249151731401,
+      "valid_ppl": 304.0868070311752,
+      "epoch_seconds": 6.08,
+      "lr_end": 0.0009794140436399368,
+      "grad_norm_mean": 0.3327080735892761,
+      "grad_norm_max": 0.6679206490516663,
+      "step_loss_std": 0.052757310099358086,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 4,
+      "train_ce": 5.905841362861393,
+      "valid_ce": 5.616837050445236,
+      "train_ppl": 367.17602413382036,
+      "valid_ppl": 275.0181376122391,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.0009510871199777161,
+      "grad_norm_mean": 0.39531616186063123,
+      "grad_norm_max": 1.2550381422042847,
+      "step_loss_std": 0.04858411033486489,
+      "clipped_frac": 0.003937007874015748
+    },
+    {
+      "epoch": 5,
+      "train_ce": 5.783391114054453,
+      "valid_ce": 5.545273290527673,
+      "train_ppl": 324.85895842358394,
+      "valid_ppl": 256.02453776422135,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.0009116084911872929,
+      "grad_norm_mean": 0.4205388977067677,
+      "grad_norm_max": 0.9802966117858887,
+      "step_loss_std": 0.04783938603669227,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 6,
+      "train_ce": 5.690535735413551,
+      "valid_ce": 5.494006273515573,
+      "train_ppl": 296.05218380186284,
+      "valid_ppl": 243.22970223024205,
+      "epoch_seconds": 6.12,
+      "lr_end": 0.0008620758091383179,
+      "grad_norm_mean": 0.45684899753472935,
+      "grad_norm_max": 0.9757971167564392,
+      "step_loss_std": 0.050001787306194215,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 7,
+      "train_ce": 5.612110761108525,
+      "valid_ce": 5.446459732760254,
+      "train_ppl": 273.72138913915666,
+      "valid_ppl": 231.9355967146376,
+      "epoch_seconds": 6.12,
+      "lr_end": 0.0008038662655602338,
+      "grad_norm_mean": 0.5148627644214104,
+      "grad_norm_max": 1.4401438236236572,
+      "step_loss_std": 0.04907688392316569,
+      "clipped_frac": 0.007874015748031496
+    },
+    {
+      "epoch": 8,
+      "train_ce": 5.548824611913018,
+      "valid_ce": 5.417594322650407,
+      "train_ppl": 256.93537956906084,
+      "valid_ppl": 225.33638330273226,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.0007385983010194346,
+      "grad_norm_mean": 0.5541464917537734,
+      "grad_norm_max": 1.1583149433135986,
+      "step_loss_std": 0.05455512812076018,
+      "clipped_frac": 0.01968503937007874
+    },
+    {
+      "epoch": 9,
+      "train_ce": 5.495104687577403,
+      "valid_ce": 5.394195335177794,
+      "train_ppl": 243.49701593911837,
+      "valid_ppl": 220.12494901056428,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.0006680866062866371,
+      "grad_norm_mean": 0.5681143722196264,
+      "grad_norm_max": 1.422568917274475,
+      "step_loss_std": 0.054504686405150826,
+      "clipped_frac": 0.027559055118110236
+    },
+    {
+      "epoch": 10,
+      "train_ce": 5.447728384529366,
+      "valid_ce": 5.366027357508343,
+      "train_ppl": 232.23002894622527,
+      "valid_ppl": 214.01098757417142,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.0005942916672228525,
+      "grad_norm_mean": 0.5859537983503867,
+      "grad_norm_max": 1.1424933671951294,
+      "step_loss_std": 0.04916887896897826,
+      "clipped_frac": 0.031496062992125984
+    },
+    {
+      "epoch": 11,
+      "train_ce": 5.40952215543353,
+      "valid_ce": 5.354595492434572,
+      "train_ppl": 223.52475206892294,
+      "valid_ppl": 211.5783739877002,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.0005192652560227072,
+      "grad_norm_mean": 0.630628010771406,
+      "grad_norm_max": 5.08280086517334,
+      "step_loss_std": 0.05585087561557687,
+      "clipped_frac": 0.03937007874015748
+    },
+    {
+      "epoch": 12,
+      "train_ce": 5.376229294806742,
+      "valid_ce": 5.337889090276686,
+      "train_ppl": 216.2054893015586,
+      "valid_ppl": 208.07302301485208,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.00044509338436011836,
+      "grad_norm_mean": 0.595670207044271,
+      "grad_norm_max": 1.3791242837905884,
+      "step_loss_std": 0.054574070264419364,
+      "clipped_frac": 0.03937007874015748
+    },
+    {
+      "epoch": 13,
+      "train_ce": 5.347588259149784,
+      "valid_ce": 5.32122499231555,
+      "train_ppl": 210.10097724015682,
+      "valid_ppl": 204.63440409032577,
+      "epoch_seconds": 6.1,
+      "lr_end": 0.00037383830454983005,
+      "grad_norm_mean": 0.5766472160581528,
+      "grad_norm_max": 1.4066951274871826,
+      "step_loss_std": 0.04909627379490756,
+      "clipped_frac": 0.01968503937007874
+    },
+    {
+      "epoch": 14,
+      "train_ce": 5.323778996243718,
+      "valid_ce": 5.315093727538873,
+      "train_ppl": 205.15770913932909,
+      "valid_ppl": 203.38357487744878,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.0003074811713069947,
+      "grad_norm_mean": 0.5817195316703301,
+      "grad_norm_max": 1.7025660276412964,
+      "step_loss_std": 0.04701046135199265,
+      "clipped_frac": 0.015748031496062992
+    },
+    {
+      "epoch": 15,
+      "train_ce": 5.305102180809454,
+      "valid_ce": 5.309304019949526,
+      "train_ppl": 201.36157665142738,
+      "valid_ppl": 202.20944566264748,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.0002478669583199181,
+      "grad_norm_mean": 0.6015871174222841,
+      "grad_norm_max": 1.256428837776184,
+      "step_loss_std": 0.04958755699332832,
+      "clipped_frac": 0.027559055118110236
+    },
+    {
+      "epoch": 16,
+      "train_ce": 5.287751437814496,
+      "valid_ce": 5.299092973105003,
+      "train_ppl": 197.89793892299548,
+      "valid_ppl": 200.15518148350196,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.0001966531611589353,
+      "grad_norm_mean": 0.5772388470689143,
+      "grad_norm_max": 1.244509220123291,
+      "step_loss_std": 0.052644973942776764,
+      "clipped_frac": 0.01968503937007874
+    },
+    {
+      "epoch": 17,
+      "train_ce": 5.274490609767149,
+      "valid_ce": 5.293984032666423,
+      "train_ppl": 195.29097185772451,
+      "valid_ppl": 199.13520829251942,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.00015526371277025197,
+      "grad_norm_mean": 0.5686209208852663,
+      "grad_norm_max": 1.1180877685546875,
+      "step_loss_std": 0.050860884721314004,
+      "clipped_frac": 0.015748031496062992
+    },
+    {
+      "epoch": 18,
+      "train_ce": 5.263908722988861,
+      "valid_ce": 5.28965762958987,
+      "train_ppl": 193.2353204220672,
+      "valid_ppl": 198.27553011281066,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.00012484939287443146,
+      "grad_norm_mean": 0.5491764275577125,
+      "grad_norm_max": 0.9665288925170898,
+      "step_loss_std": 0.049466768608178835,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 19,
+      "train_ce": 5.255035902431504,
+      "valid_ce": 5.287411932159596,
+      "train_ppl": 191.52836206484014,
+      "valid_ppl": 197.83076285761044,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.00010625583203465884,
+      "grad_norm_mean": 0.5425477369329123,
+      "grad_norm_max": 1.2263721227645874,
+      "step_loss_std": 0.05193022266782718,
+      "clipped_frac": 0.007874015748031496
+    },
+    {
+      "epoch": 20,
+      "train_ce": 5.250106211871897,
+      "valid_ce": 5.284988748491999,
+      "train_ppl": 190.5865099336468,
+      "valid_ppl": 197.3519629284753,
+      "epoch_seconds": 6.11,
+      "lr_end": 0.0001,
+      "grad_norm_mean": 0.5638314492589845,
+      "grad_norm_max": 1.1871979236602783,
+      "step_loss_std": 0.05562150713265165,
+      "clipped_frac": 0.01968503937007874
+    }
+  ],
+  "samples": [
+    {
+      "prompt": "the city is located in",
+      "continuation": "the world war . the first two days of the missouri river were the same day , on 1 january 1946 , and he took to be a first season and a small league in the season . <eos> ="
+    },
+    {
+      "prompt": "in 1995 , the band released",
+      "continuation": "in his career : the song received mixed reviews from critics 's death , but he played . the first team in the united states was selected for the united states and the united states , and then won the"
+    },
+    {
+      "prompt": "the game received",
+      "continuation": "a year @-@ old version of the first year and the club , at the time of the show were relegated up at the age of the season . <eos> = = = = = = = <eos> a 10"
+    },
+    {
+      "prompt": "he was born in",
+      "continuation": "2011 . <eos> = = = = release = = = <eos> = = = <eos> the original film is a small @-@ language and film 's daughter and the song , and in the early 1990s , while it"
+    },
+    {
+      "prompt": "during the war , the",
+      "continuation": "ship had a tropical depression , at an intersection for the rest of an area of the ship , to the northeast of the town . <eos> the island was laid of a tropical storm @-@ mile ( 3 @.@"
+    }
+  ],
+  "greedy": [
+    {
+      "prompt": "the city is located in",
+      "continuation": "the united states . <eos> = = = = = = = = <eos> the first time of the genus is a large @-@ shaped @-@ shaped @-@ shaped @-@ shaped @-@ shaped @-@ shaped @-@ shaped @-@ shaped @-@"
+    },
+    {
+      "prompt": "in 1995 , the band released",
+      "continuation": "in the united states . <eos> = = = = = = = = <eos> the album was released in the united states , and the first time of the season , and the first time of the season ,"
+    },
+    {
+      "prompt": "the game received",
+      "continuation": "a number of the game . <eos> = = = = = = = = <eos> the album was released in the united states , and the first time of the season , and the first time of the season"
+    },
+    {
+      "prompt": "he was born in",
+      "continuation": "the united states . <eos> = = = = <eos> the first time of the season was a first @-@ year @-@ old @-@ year @-@ old @-@ year @-@ yard line . <eos> = = = = <eos> the"
+    },
+    {
+      "prompt": "during the war , the",
+      "continuation": "first time of the british empire , and the british battalion was a major @-@ class , and the ship was a major @-@ yard line . the ship was a tropical storm , and the storm was a tropical"
+    }
+  ],
+  "sample_repetition": {
+    "distinct_1": 0.66,
+    "distinct_2": 0.887,
+    "repeated_trigram_rate": 0.058
+  },
+  "greedy_repetition": {
+    "distinct_1": 0.435,
+    "distinct_2": 0.595,
+    "repeated_trigram_rate": 0.326
+  },
+  "embedding_coverage": null,
+  "hardware": {
+    "device": "cuda",
+    "torch": "2.11.0+cu128",
+    "python": "3.12.10",
+    "os": "Windows 11",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "cpu_count": 16,
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpu_mem_gb": 17.1
+  },
+  "corpus": {
+    "vocab_size": 28913,
+    "train_tokens": 2075677,
+    "train_unk_rate": 0.02631671498022091,
+    "valid_tokens": 216347,
+    "valid_unk_rate": 0.05416298816253519,
+    "test_tokens": 244102,
+    "test_unk_rate": 0.062342791128298825
+  }
+}

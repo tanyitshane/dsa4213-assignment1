@@ -1,0 +1,493 @@
+{
+  "name": "lstm_glove",
+  "arch": "lstm",
+  "embedding": "glove",
+  "embedding_trainable": false,
+  "embedding_changed_during_training": false,
+  "params": {
+    "total": 11214869,
+    "trainable": 8323569,
+    "embedding": 2891300,
+    "output_layer": 7430641,
+    "core": 892928,
+    "size_mb_fp32": 44.86
+  },
+  "config": {
+    "SEQ_LEN": 128,
+    "BATCH_SIZE": 64,
+    "EMB_DIM": 100,
+    "HIDDEN": 256,
+    "DROPOUT": 0.3,
+    "LR": 0.001,
+    "WEIGHT_DECAY": 0.01,
+    "WARMUP_STEPS": 300,
+    "GRAD_CLIP": 1.0,
+    "SEED": 42,
+    "epochs": 20
+  },
+  "best_epoch": 20,
+  "valid_ce": 5.366283836857395,
+  "valid_ppl": 214.06588401255493,
+  "test_ce": 5.290054244964175,
+  "test_ppl": 198.35418483320646,
+  "test_targets": 244101,
+  "train_seconds": 178.98,
+  "seconds_per_epoch": 8.95,
+  "inference": {
+    "workload": "score all test targets once (batch 64, window 128)",
+    "seconds_median": 0.4485,
+    "seconds_all": [
+      0.4532,
+      0.4263,
+      0.4485
+    ],
+    "tokens": 244101,
+    "tokens_per_second": 544306.4
+  },
+  "generation_seconds": 0.329,
+  "history": [
+    {
+      "epoch": 1,
+      "train_ce": 7.788760910540606,
+      "valid_ce": 6.7564263740143105,
+      "train_ppl": 2413.3254027202397,
+      "valid_ppl": 859.5649369829513,
+      "epoch_seconds": 8.98,
+      "lr_end": 0.00085,
+      "grad_norm_mean": 0.4152571789509668,
+      "grad_norm_max": 1.5117833614349365,
+      "step_loss_std": 0.0365622452312338,
+      "clipped_frac": 0.1141732283464567
+    },
+    {
+      "epoch": 2,
+      "train_ce": 6.994391041690546,
+      "valid_ce": 6.570129904036821,
+      "train_ppl": 1090.499406821446,
+      "valid_ppl": 713.462518774577,
+      "epoch_seconds": 9.06,
+      "lr_end": 0.0009958016689451123,
+      "grad_norm_mean": 0.23924121788636907,
+      "grad_norm_max": 0.31036576628685,
+      "step_loss_std": 0.06793294394752346,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 3,
+      "train_ce": 6.695310813613053,
+      "valid_ce": 6.271549853518785,
+      "train_ppl": 808.6052206670539,
+      "valid_ppl": 529.297075442888,
+      "epoch_seconds": 8.99,
+      "lr_end": 0.0009794140436399368,
+      "grad_norm_mean": 0.2160326834386728,
+      "grad_norm_max": 0.3017873764038086,
+      "step_loss_std": 0.055429857793270164,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 4,
+      "train_ce": 6.461460919567544,
+      "valid_ce": 6.077156535422425,
+      "train_ppl": 639.9953556737001,
+      "valid_ppl": 435.7882827645303,
+      "epoch_seconds": 8.96,
+      "lr_end": 0.0009510871199777161,
+      "grad_norm_mean": 0.1995298954562878,
+      "grad_norm_max": 0.3159519135951996,
+      "step_loss_std": 0.04870862060051464,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 5,
+      "train_ce": 6.29942351427553,
+      "valid_ce": 5.946624408571802,
+      "train_ppl": 544.2580626667758,
+      "valid_ppl": 382.4601284824766,
+      "epoch_seconds": 8.94,
+      "lr_end": 0.0009116084911872929,
+      "grad_norm_mean": 0.19047847390174866,
+      "grad_norm_max": 0.34706389904022217,
+      "step_loss_std": 0.04298565305247651,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 6,
+      "train_ce": 6.165026084165242,
+      "valid_ce": 5.8303947745307285,
+      "train_ppl": 475.8135539728702,
+      "valid_ppl": 340.4930705349767,
+      "epoch_seconds": 8.94,
+      "lr_end": 0.0008620758091383179,
+      "grad_norm_mean": 0.1951322046321208,
+      "grad_norm_max": 0.32300376892089844,
+      "step_loss_std": 0.0434322943868444,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 7,
+      "train_ce": 6.047692799995513,
+      "valid_ce": 5.723933130769115,
+      "train_ppl": 423.1356444055835,
+      "valid_ppl": 306.1065153520516,
+      "epoch_seconds": 8.91,
+      "lr_end": 0.0008038662655602338,
+      "grad_norm_mean": 0.19678586029161618,
+      "grad_norm_max": 0.31811970472335815,
+      "step_loss_std": 0.042037077909416055,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 8,
+      "train_ce": 5.943429508657176,
+      "valid_ce": 5.647055869850841,
+      "train_ppl": 381.2401565325063,
+      "valid_ppl": 283.45570564530027,
+      "epoch_seconds": 8.95,
+      "lr_end": 0.0007385983010194346,
+      "grad_norm_mean": 0.20075596200199577,
+      "grad_norm_max": 0.3642386794090271,
+      "step_loss_std": 0.04769157614592758,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 9,
+      "train_ce": 5.85975784657124,
+      "valid_ce": 5.584853407562423,
+      "train_ppl": 350.6392252479909,
+      "valid_ppl": 266.36123333489087,
+      "epoch_seconds": 8.96,
+      "lr_end": 0.0006680866062866371,
+      "grad_norm_mean": 0.19953361628797112,
+      "grad_norm_max": 0.3084354102611542,
+      "step_loss_std": 0.04787706447912107,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 10,
+      "train_ce": 5.793197029039904,
+      "valid_ce": 5.534320909128202,
+      "train_ppl": 328.0601674929012,
+      "valid_ppl": 253.23575913976447,
+      "epoch_seconds": 8.93,
+      "lr_end": 0.0005942916672228525,
+      "grad_norm_mean": 0.20531399806184092,
+      "grad_norm_max": 0.33352071046829224,
+      "step_loss_std": 0.045543908458282586,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 11,
+      "train_ce": 5.73912437168895,
+      "valid_ce": 5.503503683047064,
+      "train_ppl": 310.79215339219957,
+      "valid_ppl": 245.55075888862515,
+      "epoch_seconds": 8.94,
+      "lr_end": 0.0005192652560227072,
+      "grad_norm_mean": 0.2086657453475036,
+      "grad_norm_max": 1.5884150266647339,
+      "step_loss_std": 0.05028086687090752,
+      "clipped_frac": 0.003937007874015748
+    },
+    {
+      "epoch": 12,
+      "train_ce": 5.694072291338934,
+      "valid_ce": 5.4710645162292115,
+      "train_ppl": 297.10104248721643,
+      "valid_ppl": 237.71310758223507,
+      "epoch_seconds": 8.99,
+      "lr_end": 0.00044509338436011836,
+      "grad_norm_mean": 0.20372632556543577,
+      "grad_norm_max": 0.3556198179721832,
+      "step_loss_std": 0.048106927329303495,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 13,
+      "train_ce": 5.655883246997804,
+      "valid_ce": 5.441950462886996,
+      "train_ppl": 285.9689524322458,
+      "valid_ppl": 230.89209100843547,
+      "epoch_seconds": 8.94,
+      "lr_end": 0.00037383830454983005,
+      "grad_norm_mean": 0.20631878828908515,
+      "grad_norm_max": 0.31853803992271423,
+      "step_loss_std": 0.04492100092020359,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 14,
+      "train_ce": 5.624694154201156,
+      "valid_ce": 5.4244254754247825,
+      "train_ppl": 277.1874949267085,
+      "valid_ppl": 226.88096017657355,
+      "epoch_seconds": 9.0,
+      "lr_end": 0.0003074811713069947,
+      "grad_norm_mean": 0.20611650209257923,
+      "grad_norm_max": 0.31761786341667175,
+      "step_loss_std": 0.04185457648550007,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 15,
+      "train_ce": 5.599769111049201,
+      "valid_ce": 5.408686508677073,
+      "train_ppl": 270.3639761642953,
+      "valid_ppl": 223.33804235741619,
+      "epoch_seconds": 8.99,
+      "lr_end": 0.0002478669583199181,
+      "grad_norm_mean": 0.20501486740009053,
+      "grad_norm_max": 0.6380970478057861,
+      "step_loss_std": 0.04569900110753674,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 16,
+      "train_ce": 5.579425397802805,
+      "valid_ce": 5.39321730114897,
+      "train_ppl": 264.9193388097873,
+      "valid_ppl": 219.90976456584636,
+      "epoch_seconds": 9.02,
+      "lr_end": 0.0001966531611589353,
+      "grad_norm_mean": 0.20194332254683878,
+      "grad_norm_max": 0.3380337357521057,
+      "step_loss_std": 0.04710082959742581,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 17,
+      "train_ce": 5.56407481151293,
+      "valid_ce": 5.384951786937937,
+      "train_ppl": 260.88372540131274,
+      "valid_ppl": 218.09958860497815,
+      "epoch_seconds": 9.1,
+      "lr_end": 0.00015526371277025197,
+      "grad_norm_mean": 0.20452478698154133,
+      "grad_norm_max": 0.40422922372817993,
+      "step_loss_std": 0.04414053569498344,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 18,
+      "train_ce": 5.55068823332807,
+      "valid_ce": 5.376719603306162,
+      "train_ppl": 257.4146563011871,
+      "valid_ppl": 216.31152268299422,
+      "epoch_seconds": 8.79,
+      "lr_end": 0.00012484939287443146,
+      "grad_norm_mean": 0.19855968243493807,
+      "grad_norm_max": 0.3375910520553589,
+      "step_loss_std": 0.046815245224481224,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 19,
+      "train_ce": 5.540247547673566,
+      "valid_ce": 5.372690160163002,
+      "train_ppl": 254.74105220878786,
+      "valid_ppl": 215.441661406363,
+      "epoch_seconds": 8.8,
+      "lr_end": 0.00010625583203465884,
+      "grad_norm_mean": 0.19770672946699022,
+      "grad_norm_max": 0.30226197838783264,
+      "step_loss_std": 0.04854010021721458,
+      "clipped_frac": 0.0
+    },
+    {
+      "epoch": 20,
+      "train_ce": 5.532700909200154,
+      "valid_ce": 5.366283836857395,
+      "train_ppl": 252.8258493447452,
+      "valid_ppl": 214.06588401255493,
+      "epoch_seconds": 8.8,
+      "lr_end": 0.0001,
+      "grad_norm_mean": 0.2013388384632238,
+      "grad_norm_max": 0.35076770186424255,
+      "step_loss_std": 0.05231061803405353,
+      "clipped_frac": 0.0
+    }
+  ],
+  "samples": [
+    {
+      "prompt": "the city is located in",
+      "continuation": "the island , and the first day in the southern terminus , it was estimated to the time of the central of the eastern states and a total of six feet , for this time of the gulf . it"
+    },
+    {
+      "prompt": "in 1995 , the band released",
+      "continuation": "to have a third @-@ year time of the episode and was certified by a \" first greatest \" , one as the album of the original game for the album 's band , but the game and a single"
+    },
+    {
+      "prompt": "the game received",
+      "continuation": "the album was a first episode , as \" in the video . dylan 's first song with ign noted that was described for \" the song of the first version of the film . he he praised as writing"
+    },
+    {
+      "prompt": "he was born in",
+      "continuation": "the united states . <eos> = = = production = = = <eos> in the early 1990s , an of the state of the british party was founded on the city , and is held at the united navy ."
+    },
+    {
+      "prompt": "during the war , the",
+      "continuation": "the church was in the first 20th and the church of the church in the north bank of a a @-@ day @-@ based in the church . the name was born , the national navy was built to the"
+    }
+  ],
+  "greedy": [
+    {
+      "prompt": "the city is located in",
+      "continuation": "the united states . the first of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of the city of"
+    },
+    {
+      "prompt": "in 1995 , the band released",
+      "continuation": "the first single of the album , and the song was released by the album of the album , and the album was released by the album of the album , and the album was released by the album of"
+    },
+    {
+      "prompt": "the game received",
+      "continuation": "the first time of the game . <eos> = = = = = = = = = = = <eos> the first season , the first season , the first season , the first season , the first season ,"
+    },
+    {
+      "prompt": "he was born in",
+      "continuation": "the united states . <eos> = = = = = = = = = = = <eos> the first of the first year , the first year of the first year , the first year , the first season ,"
+    },
+    {
+      "prompt": "during the war , the",
+      "continuation": "first of the first of the first year , the first of the first of the first year , the first of the first year , the first year of the first year , the first year , the first"
+    }
+  ],
+  "sample_repetition": {
+    "distinct_1": 0.64,
+    "distinct_2": 0.918,
+    "repeated_trigram_rate": 0.011
+  },
+  "greedy_repetition": {
+    "distinct_1": 0.22,
+    "distinct_2": 0.318,
+    "repeated_trigram_rate": 0.621
+  },
+  "embedding_coverage": {
+    "source": "glove",
+    "type_coverage": 0.9618,
+    "token_coverage": 0.9474,
+    "missing_types": 1103,
+    "most_frequent_missing": [
+      [
+        "<unk>",
+        54625
+      ],
+      [
+        "<eos>",
+        23767
+      ],
+      [
+        "@-@",
+        16906
+      ],
+      [
+        "@.@",
+        3194
+      ],
+      [
+        "@,@",
+        2699
+      ],
+      [
+        "'t",
+        592
+      ],
+      [
+        "°",
+        258
+      ],
+      [
+        "−",
+        82
+      ],
+      [
+        "'brien",
+        76
+      ],
+      [
+        "×",
+        75
+      ],
+      [
+        "'malley",
+        54
+      ],
+      [
+        "magadheera",
+        53
+      ],
+      [
+        "sorraia",
+        48
+      ],
+      [
+        "degrom",
+        47
+      ],
+      [
+        "₹",
+        45
+      ],
+      [
+        "isesi",
+        44
+      ],
+      [
+        "toniná",
+        44
+      ],
+      [
+        "coldrum",
+        40
+      ],
+      [
+        "mkhedruli",
+        36
+      ],
+      [
+        "vandernoot",
+        36
+      ],
+      [
+        "﻿",
+        36
+      ],
+      [
+        "berhtwald",
+        35
+      ],
+      [
+        "qedar",
+        35
+      ],
+      [
+        "qedarites",
+        35
+      ],
+      [
+        "→",
+        34
+      ]
+    ],
+    "missing_init": "N(0, 0.4082^2), seed 42; <pad> = 0; whole table frozen",
+    "source_vector_std": 0.4082
+  },
+  "hardware": {
+    "device": "cuda",
+    "torch": "2.11.0+cu128",
+    "python": "3.12.10",
+    "os": "Windows 11",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "cpu_count": 16,
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpu_mem_gb": 17.1
+  },
+  "corpus": {
+    "vocab_size": 28913,
+    "train_tokens": 2075677,
+    "train_unk_rate": 0.02631671498022091,
+    "valid_tokens": 216347,
+    "valid_unk_rate": 0.05416298816253519,
+    "test_tokens": 244102,
+    "test_unk_rate": 0.062342791128298825
+  }
+}
